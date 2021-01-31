@@ -31,7 +31,7 @@
       <Icon color="error">bedtime</Icon>           //red-orange moon
       <Icon color="error">face</Icon>              //red-orange moon
       <Icon color="error">tag_faces</Icon>         //red-orange moon
-       <Icon color="error" >delete</Icon>          //delete/trashcan icon
+      <Icon color="error" >delete</Icon>           //delete/trashcan icon
       
       ```
    > Icon set the correct class name for the Material icon font. For other fonts, you must supply the class name using the Icon component's className property.
