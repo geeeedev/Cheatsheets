@@ -1,4 +1,4 @@
 ### A Collection of Notes for My Own Learning
 ---
-- Ongoing adding, modifying, updating, correcting as I learn and research
-- Practice using Markdown
+- :white_check_mark: Ongoing adding, modifying, updating, correcting as I learn and research
+- :wrench: Practice using Markdown
