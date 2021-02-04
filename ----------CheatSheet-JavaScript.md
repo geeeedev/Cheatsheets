@@ -418,11 +418,44 @@ var bar = [];
 console.log(Array.isArray(bar));          //true
 ```
 
+### More Scopes
+---
+What will the code below output to the console and why?
+```js
+(function(){
+  var a = b = 3;
+})();
 
+console.log("a defined? " + (typeof a !== 'undefined'));      //false; a is undefined to global (my answer)
+console.log("b defined? " + (typeof b !== 'undefined'));      //true: b is defined in global (my answer)
+```
+Explanation:
+`var a = b = 3;` is NOT shorthand for:  var b = 3; var a = b;
 
+In JS, `var a = b = 3;` is shorthand for:
+```js
+b = 3;        //global var outside function
+var a = b;    //local var inside function
+```
+As such, logging a and b outside of function after run makes a NOT visible to global (not defined) and b defined in global scope.
+> Since the statement var a = b = 3; is shorthand for the statements b = 3; and var a = b;, b ends up being a global variable (since it is not preceded by the var keyword) and is therefore still in scope even outside of the enclosing function.
 
-
-
+NOTE: `'use strict'`  
+However if in strict mode:
+```js
+(function(){
+    'use strict';
+    var a = b = 3;
+  })();
+```
+b defined in such a way would not be allowed and thus generate a runtime error: `ReferenceError: b is not defined`
+In strict mode, b needs to be defined as specific as possible:
+```js
+(function(){
+    'use strict';
+    var a = Window.b = 3;     //points to DOM loaded in window
+  })();
+```
 
 ### topic
 ---
