@@ -335,6 +335,40 @@ console.log(test.call(obj));        //Colin Ihrig
 [See: What’s the difference between function.call and function.apply?](https://www.sitepoint.com/whats-the-difference-between-function-call-and-function-apply/)
 
 
+### global vs. local scope
+---
+What is the result of this code?
+```js
+var v = 1;                      //global var
+var f1 = function(){
+    console.log(v);
+}
+var f2 = function(){
+    var v = 2;                  //local var
+    f1();
+}
+f2();
+```
+Answer: f2() prints 1.  f1() v is looking at the global var.
+
+What about this?
+```js
+var v = 1;                      //global var
+var f1 = function(){
+    console.log(v);
+}
+var f2 = function(){
+    var v = 2;                  //local var
+    var f1 = function(){        //local f1 overrides global
+        console.log(v);         //local f1 has scope to local v
+    }
+    f1();                       
+}
+f2();
+```
+Answer: f2() prints 2.  local f1() overrides global f1()
+
+
 
 
 
