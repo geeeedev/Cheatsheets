@@ -322,16 +322,16 @@ global fullname John Doe outside of obj object.
 
 >In the first console.log() call, getFullname() is invoked as a function of the obj.prop object. So, the context refers to the latter and the function returns the fullname property of this object. On the contrary, when getFullname() is assigned to the test variable, the context refers to the global object (window). This happens because test is implicitly set as a property of the global object. For this reason, the function returns the value of a property called fullname of window, which in this case is the one the code set in the first line of the snippet.
 
-### call() and apply()
+### .call() and .apply()
 ---
 Fix the previous question’s issue so that the last console.log() prints Aurelio De Rosa.
-
 Answer:
 ```js
 console.log(test.call(obj.prop));   //Aurelio De Rosa
 console.log(test.call(obj));        //Colin Ihrig
 ```
-> The issue can be fixed by forcing the context of the function using either the call() or the apply() function.\
+> .call()/.apply() calls/applies a method of an object, substituting another object for the current object.\
+> The issue is fixed by forcing the context of the function using either the call() or the apply() function.\
 [See: What’s the difference between function.call and function.apply?](https://www.sitepoint.com/whats-the-difference-between-function-call-and-function-apply/)
 
 
@@ -368,12 +368,55 @@ f2();
 ```
 Answer: f2() prints 2.  local f1() overrides global f1()
 
+### typeof === object?
+---
+What is a potential pitfall with using typeof bar === "object" to determine if bar is an object? How can this pitfall be avoided?
+Answer: In JS, `null` is ALSO an object (see below).
+```js
+var bar = "text";
+console.log(typeof bar === "object");     //false
+console.log(typeof bar);                  //string
 
+var bar = true;
+console.log(typeof bar === "object");     //false
+console.log(typeof bar);                  //boolean
 
+var bar = {name: "bar", type: "soap"};
+console.log(typeof bar === "object");     //true
+console.log(typeof bar);                  //object
 
+var bar = null;
+console.log(typeof bar === "object");     //true    <-----------------!!!
+console.log(typeof bar);                  //object
+```
+To avoid, also include checking bar is null:
+```js
+var bar = null;
+console.log(bar !== null && typeof bar === "object");   //false <--------
+console.log(typeof bar);                                //object
 
+var bar = [];
+console.log(bar !== null && typeof bar === "object" );  //true - array is object
+console.log(typeof bar);                                //object 
+```
+Testing multiple scenarios
+```js
+var bar = function(){ return 1+1;};
+console.log(bar !== null && typeof bar === "object" 
+    || typeof bar ==="function");         //true
+console.log(typeof bar);                  //function
 
+var bar = [];
+console.log(toString.call(bar));          //[object Array]
+console.log(typeof bar);                  //object
 
+console.log((bar !== null) && (typeof bar === "object") && (toString.call(bar) !== "[object Array]"));                                //more specific filter
+```
+Note: ES5 has its own null check:
+```js
+var bar = [];
+console.log(Array.isArray(bar));          //true
+```
 
 
 
