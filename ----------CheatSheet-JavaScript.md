@@ -537,6 +537,42 @@ The delete operator (used to remove properties from objects) cannot be used on n
 &nbsp;  
 &nbsp; 
 
+### return & {}
+---
+Consider the two functions below. Will they both return the same thing? Why or why not?
+```js
+function foo1()
+{
+  return {
+      bar: "hello"
+  };
+}
+
+function foo2()
+{
+  return
+  {
+      bar: "hello"
+  };
+}
+console.log("foo1 returns:",foo1());
+console.log("foo2 returns:",foo2());
+```
+mine:  
+No, foo1() returns the obj.  foo2() returns undefined because the obj defined is on the next line after return. JS implicitly ends the return stmt with a silent `;` and the next lines (the obj) was never processed.  
+Answer:  
+  foo1 returns: Object {bar: "hello"}
+  foo2 returns: undefined 
+
+foo2() will actually return undefined WITHOUT any error being thrown.
+
+Reason: semicolons are technically optional in JavaScript (although omitting them is generally really bad form). As a result, when the line containing the return statement (with nothing else on the line) is encountered in foo2(), a semicolon is automatically inserted immediately after the return statement.
+
+No error is thrown since the remainder of the code is perfectly valid, even though it doesn’t ever get invoked or do anything (it is simply an unused code block that defines a property bar which is equal to the string "hello").
+
+This behavior also argues for following the convention of placing an opening curly brace at the end of a line in JavaScript, rather than on the beginning of a new line. As shown here, this becomes more than just a stylistic preference in JavaScript.
+
+REMEMBER: The opening { should always follow `return` immediately instead of on the next line.  This is not like a function in other Java/C# language.
 
 
   
