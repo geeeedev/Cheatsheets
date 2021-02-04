@@ -486,7 +486,23 @@ inner func:  self.foo = bar
 this. represents the current object in ACCESS!
 In the outer function, both this and self refer to myObject and therefore both can properly reference and access foo.
 
-In the inner function, though, this no longer refers to myObject. (inner function() is running on its own) As a result, this.foo is undefined in the inner function, whereas the reference to the local variable self remains in scope and is accessible there because it is local to the inner function.
+In the inner function, though, this no longer refers to myObject. (inner function() is running on its own) As a result, this.foo is undefined in the inner function, whereas the reference to the local variable self remains in scope and is accessible there because it is local to the inner function.  
+&nbsp;  
+&nbsp;  
+
+### JS function block
+---
+What is the significance of, and reason for, wrapping the entire content of a JavaScript source file in a function block?  
+mine:
+reusability of code (importable elsewhere), modulize for easily maintainable code, separation of concern  
+Answer:
+> create closure, create private namespace, avoid potential name clashes between JS modules and libraries, allow easily referenceable shorter alias for global variable.
+
+This is an increasingly common practice, employed by many popular JavaScript libraries (jQuery, Node.js, etc.). This technique creates a closure around the entire contents of the file which, perhaps most importantly, creates a private namespace and thereby helps avoid potential name clashes between different JavaScript modules and libraries.
+
+Another feature of this technique is to allow for an easily referenceable (presumably shorter) alias for a global variable. This is often used, for example, in jQuery plugins. jQuery allows you to disable the $ reference to the jQuery namespace, using jQuery.noConflict(). If this has been done, your code can still use $ employing this closure technique, as follows:
+
+(function($) { /* jQuery plugin code referencing $ */ } )(jQuery);
 
 
 
@@ -495,12 +511,9 @@ In the inner function, though, this no longer refers to myObject. (inner functio
 
 
 
-
-
-
-
-
-
+  
+&nbsp;  
+&nbsp;  
 ### topic
 ---
 code example ...
