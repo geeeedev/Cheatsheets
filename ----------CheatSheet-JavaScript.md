@@ -573,6 +573,64 @@ No error is thrown since the remainder of the code is perfectly valid, even thou
 This behavior also argues for following the convention of placing an opening curly brace at the end of a line in JavaScript, rather than on the beginning of a new line. As shown here, this becomes more than just a stylistic preference in JavaScript.
 
 REMEMBER: The opening { should always follow `return` immediately instead of on the next line.  This is not like a function in other Java/C# language.
+  
+&nbsp;  
+&nbsp; 
+
+### NaN
+---
+What is NaN? What is its type? How can you reliably test if a value is equal to NaN?  
+mine:  
+"Not a Number", NaN is a type number, can use parseInt() to test if the value return is a numeric value or NaN  
+Answer:  
+The `NaN` property represents a value that is “not a number”. This special value results from an operation that could not be performed either because one of the operands was non-numeric (e.g., "abc" / 4), or because the result of the operation is non-numeric.
+
+Things to NOTE:
+- NaN means “not a number”, its type however, is Number:  
+  ```js
+  console.log(typeof NaN);  // number
+  ```
+- NaN compared to anything – even itself! – is false:
+  ```js
+  console.log(NaN === NaN);             // false
+  var text = 'text';
+  console.log(parseInt(text));          // NaN
+  console.log(parseInt(text) === NaN);  // false !!!
+  console.log(Number(text));            // NaN
+  console.log(Number(text) === NaN);    // false !!!
+  ```
+
+Testing NaN:
+```js
+var num = 4;
+var text = 'text';
+console.log(parseInt(num));   //4
+console.log(parseInt(text));  //NaN
+console.log(isNaN(num));      //false
+console.log(isNaN(text));     //true
+console.log(Number(num));     //4
+console.log(Number(text));    //NaN
+```
+
+A better solution would either be to use value !== value, which would only produce true if the value is equal to NaN. 
+```js
+var num = 4;
+var text = 'text';
+console.log(parseInt(num)); //4
+console.log(num !== 4);     //false
+console.log(text !== 4);    //true    
+```
+ES6 offers a new Number.isNaN() function, which is a different and more reliable than the old global isNaN() function.
+```js
+var num = 4;
+var text = 'text';
+console.log(Number.isNaN(NaN));                 //true
+console.log(Number.isNaN(num));                 //false - correct - 4 is number
+console.log(Number.isNaN(text));                //false - text is a string, not NaN
+console.log(Number.isNaN(parseInt(text)));      //true
+```
+
+
 
 
   
