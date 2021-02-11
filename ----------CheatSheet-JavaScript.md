@@ -632,8 +632,8 @@ console.log(Number.isNaN(parseInt(text)));      //true
 
 ### Terminology
 ---
-- Functional Programming
-  - are pure functions 
+- Functional Programming are
+  - pure functions 
     - same input always produce the same output
   - isolated
     - depends only on the arguments passed in
@@ -642,12 +642,14 @@ console.log(Number.isNaN(parseInt(text)));      //true
     - also limit any changes to the state of program
     - also avoid changes to the global objects/variables
   - without side effects
+    - should not have one change causing an unexpected change on output
+    - Example: Instead of slice(), using splice() alters array which produced unintended result there after
 
 - Callbacks
   - the functions that are slipped or passed into another function to decide the invocation of that passed function.
   - Examples: 
     - in filter(): the callback function tells JS the criteria for how to filter an array
-    - prepareGreenTea() prepareBlackTea() are Callbacks (below)
+    
 
 
 - First Class Functions
@@ -660,15 +662,13 @@ console.log(Number.isNaN(parseInt(text)));      //true
 - Higher Order Functions
   - functions that take a function as an argument, or return a function as a return value 
   - Examples:
-    - map()
-    - filtered()
-    - reduce()
+    - map() - fn as argument
+    - filtered() - fn as argument
+    - reduce() - fn as argument
 
 
 - Lambda
   - when the functions are passed in to another function or reutrned from another function, then those functions which gets passed in or returned can be called a lambda
-  - Examples:
-    - prepareGreenTea() prepareBlackTea() are Lambda (below)
 
 
 
