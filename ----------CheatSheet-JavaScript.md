@@ -630,6 +630,51 @@ console.log(Number.isNaN(text));                //false - text is a string, not 
 console.log(Number.isNaN(parseInt(text)));      //true
 ```
 
+### Terminology
+---
+- Functional Programming
+  - are pure functions 
+    - same input always produce the same output
+  - isolated
+    - depends only on the arguments passed in
+  - independent 
+    - from state of program or global variables that are subject to change
+    - also limit any changes to the state of program
+    - also avoid changes to the global objects/variables
+  - without side effects
+
+- Callbacks
+  - the functions that are slipped or passed into another function to decide the invocation of that passed function.
+  - Examples: 
+    - in filter(): the callback function tells JS the criteria for how to filter an array
+    - prepareGreenTea() prepareBlackTea() are Callbacks (below)
+
+
+First Class Functions: functions that can be assigned to a variable, passed into
+another function, or returned from another function just like any normal value, 
+meaning they can be used like any other object.
+In JS, all functions are first class functions/objects.
+
+
+Higher Order Functions: functions that take a function as an argument, or return 
+a function as a return value 
+Eg. getTea is HOF (below)
+
+
+Lambda: when the functions are passed in to another function 
+or reutrned from another function, then those functions which gets passed in or 
+returned can be called a lambda
+Eg. prepareGreenTea() prepareBlackTea() are Lambda (below)
+
+
+- Higher Order Functions
+  - A function is considered HOF if it:
+    1. has another function as arguments
+    1. ...
+  - Examples:
+    - map()
+    - filtered()
+    - reduce()
 
 
 
