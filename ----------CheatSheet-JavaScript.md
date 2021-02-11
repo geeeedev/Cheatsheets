@@ -650,31 +650,28 @@ console.log(Number.isNaN(parseInt(text)));      //true
     - prepareGreenTea() prepareBlackTea() are Callbacks (below)
 
 
-First Class Functions: functions that can be assigned to a variable, passed into
-another function, or returned from another function just like any normal value, 
-meaning they can be used like any other object.
-In JS, all functions are first class functions/objects.
+- First Class Functions
+  - functions that can be assigned to a variable, passed into another function, or returned from another function just like any normal value, meaning they can be used like any other object.
+  - Examples:
+    - In JS, all functions are first class functions/objects.
 
-
-Higher Order Functions: functions that take a function as an argument, or return 
-a function as a return value 
-Eg. getTea is HOF (below)
-
-
-Lambda: when the functions are passed in to another function 
-or reutrned from another function, then those functions which gets passed in or 
-returned can be called a lambda
-Eg. prepareGreenTea() prepareBlackTea() are Lambda (below)
 
 
 - Higher Order Functions
-  - A function is considered HOF if it:
-    1. has another function as arguments
-    1. ...
+  - functions that take a function as an argument, or return a function as a return value 
   - Examples:
     - map()
     - filtered()
     - reduce()
+
+
+- Lambda
+  - when the functions are passed in to another function or reutrned from another function, then those functions which gets passed in or returned can be called a lambda
+  - Examples:
+    - prepareGreenTea() prepareBlackTea() are Lambda (below)
+
+
+
 
 
 
