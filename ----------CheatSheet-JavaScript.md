@@ -135,7 +135,7 @@ for (let i = 0; i < 4; ++i) {
   ```
 
 
-### string.split("") 
+### `string.split("")` 
 ---
   - convert string to array
   - ("") separates each character out
@@ -156,7 +156,7 @@ for (let i = 0; i < 4; ++i) {
     ```
   
 
-### array.join("") ...
+### `array.join("")` ...
 ---
   - convert or concatenate all array items into one string, without space or comma separated
   - (), (",') or (" ") would add the specified char as seperated delimiter
@@ -179,13 +179,36 @@ for (let i = 0; i < 4; ++i) {
     ```
 
 
-### string.repeat(#)
+### `string.repeat(#)`
 ---
 ```js
 " ".repeat(5)   //_____   - 5 spaces
 '*'.repeat(5)   //*****   - 5 stars
 "/-".repeat(3)  ///-/-/-  - 3 of /-
 ```
+
+
+### `array.concat(arr2)`
+---
+- perfect for merging/combining two or more arrays.  
+- does NOT mutate the original arrays
+- creates a new array with the combined result
+- sometimes better than .push() because of immutability
+  ```js
+  const array1 = ['a', 'b', 'c'];
+  const array2 = ['d', 'e', 'f', 'g'];
+  const array3 = array1.concat(array2); 
+  //["a", "b", "c", "d", "e", "f", "g"]
+  ```
+- merge works even if the arguments ARE NOT IN AN ARRAY !!!
+  ```js
+  const array1 = ['a', 'b', 'c'];
+  const array3 = array1.concat('h', 'i');
+  //["a", "b", "c", "h", "i"]
+  const array3 = array1.concat(39);
+  //["a", "b", "c", 39]
+  ```
+
 
 ### [for in vs. for of](https://bitsofco.de/for-in-vs-for-of/) ...
 ---
