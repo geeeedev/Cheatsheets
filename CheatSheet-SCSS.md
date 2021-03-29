@@ -15,7 +15,25 @@
     - all features are available for both systaxes
     - everything in SCSS is available in Sass
     - a CSS file is a valid SCSS file - compatibility  
-    - difference between Sass and SCSS is [subtle](https://sass-lang.com/documentation/syntax).
+    - difference between Sass and SCSS is [subtle](https://sass-lang.com/documentation/syntax).  
+&nbsp;  
+&nbsp;  
+
+> ### INSTALLING SASS
+- instailling Sass on the **command line** will enable to run the sass executable to compile .sass and .scss files to .css files.
+    ```
+    sass source/stylesheets/index.scss build/stylesheets/index.css
+    ```
+- [follow here](https://sass-lang.com/install)
+- install on Mac OSX using Homebrew (the Dart Sass)
+    ```
+    brew install sass/sass/sass
+    ```
+- install using Node.js and npm (but this pure JS implementation runs slower than Dart Sass)
+    ```
+    npm install -g sass
+    ```
+- also read resources [adding to your PATH](https://katiek2.github.io/path-doc/)
 &nbsp;  
 &nbsp;  
 
@@ -382,6 +400,12 @@
     | **Extensions** | any class | @extend .class | `Yes` | No | `Yes` |
     | **Placeholders** | %placeholderName | @extend %placeholderName | `Yes` | No | No |  
 &nbsp;  
+&nbsp;  
+
+
+> ### OPERATORS: 
+- add/subtract/multiply/divide
+- `960px / 4`  or  `$space * 2`  
 &nbsp;  
 
 
