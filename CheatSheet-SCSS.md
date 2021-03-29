@@ -251,3 +251,37 @@
 
 
 
+- extensions: 
+    - avoid writing the same set of properties across diff CSS rules
+    - to inherit the same CSS properties of another selector
+        ```scss
+        .small-uppercase{
+            color: lightslategrey;
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            line-height: 12px;
+            text-transform: uppercase;
+        }
+        .modal-background{
+            @extend .small-uppercase;
+        }
+        .product-link{
+            @extend .small-uppercase;
+        }
+        .image-pattern{
+            @extend .small-uppercase;
+        }
+        ```
+        ```css
+        <!-- generated css -->
+        .small-uppercase,       <!-- note that .small-uppercase is included in the common props list -->
+        .modal-background,
+        .product-link,
+        .image-pattern{
+            color: lightslategrey;
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            line-height: 12px;
+            text-transform: uppercase;
+        }
+        ```
