@@ -1,4 +1,4 @@
-## Purpose: Remind myself what I learn in SCSS
+## Purpose: Remind myself some basics of SCSS
 
 1. Two CSS preprocessors to choose from:
     - [Less](https://lesscss.org/) - JavaScript
@@ -15,7 +15,7 @@
     - all features are available for both systaxes
     - everything in SCSS is available in Sass
     - a CSS file is a valid SCSS file - compatibility  
-    - difference between Sass and SCSS is [subtle](https://sass-lang.com/documentation/syntax).  
+    - difference between Sass and SCSS is [subtle](https://sass-lang.com/documentation/syntax).
 &nbsp;  
 &nbsp;  
 
@@ -33,12 +33,14 @@
     ```
     npm install -g sass
     ```
-- also read resources [adding to your PATH](https://katiek2.github.io/path-doc/)
-&nbsp;  
+- also read resources [adding to your PATH](https://katiek2.github.io/path-doc/)  
+
 &nbsp;  
 
 ## SCSS Features:
 ### Everything about Sass/SCSS is to provide tools for **DRY**
+> [See more specifics in SASS/SCSS documentation](https://sass-lang.com/documentation/style-rules)  
+> [Also see flow control in SCSS](https://sass-lang.com/documentation/at-rules/control)
 ---
 > ### [VARIABLES: prevents repeating values](https://marksheet.io/sass-variables.html)
 - no more searching and replacing all occurrences of the same CSS value
@@ -101,6 +103,7 @@
     $mobile-space:        10px;
     $desktop-space:       35px;
     ```
+
 
 > ### [NESTING: prevents repeating selectors](https://marksheet.io/sass-nesting.html)
 - nesting CSS rules within parent/child selectors allow to define hierarchy selectors
@@ -174,7 +177,9 @@
     }
     ```
 
-> ### [MIXINS and EXTENSIONS: prevents repeating properties](https://marksheet.io/sass-mixins.html)
+
+
+> ### [MIXINS / EXTENSIONS / PLACEHOLDERS: prevents repeating properties](https://marksheet.io/sass-mixins.html)
 - mixins:
     - avoid writing the same CSS code over and over again
     - custom CSS functions that can accept parameters
@@ -392,7 +397,7 @@
     - the `%small-uppercase` rule is only here to provide a location for common properties
 
 - Difference between mixins, extensions, and placeholders:  
-    - @extend and %placeholder are more elegant and efficient, while mixins are more straightforward
+    > @extend and %placeholder are more elegant and efficient, while mixins are more straightforward
 
     |        | Definition | Referencing | Combines Selectors? | Allow Params? | Can be used on its own? |
     | ------ |------      |------       |------               |------         |------                   |
@@ -409,3 +414,4 @@
 &nbsp;  
 
 
+> [See more specifics in SASS/SCSS documentation](https://sass-lang.com/documentation/style-rules)
