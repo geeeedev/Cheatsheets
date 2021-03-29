@@ -19,3 +19,44 @@
 &nbsp;  
 &nbsp;  
 
+## SCSS Features:
+### Everything about Sass/SCSS is to provide tools for **DRY**
+---
+> ### [VARIABLES: prevents repeating values](https://marksheet.io/sass-variables.html)
+- no more searching and replacing all occurrences of the same CSS value
+- `#fce473 (css)` => `$yellow: #fce473 (.scss)`
+- prepend variable with `$` to defining a variable
+- .scss file will be compiled into a .css file, where all variables will be replaced with their actual values
+    ```scss
+    $yellow: #fce473 
+    .quote{ border-left: 5px solid $yellow;}    //.quote{ border-left: 5px solid #fce473;}
+    ```
+- to see the variable power in effect
+    ```scss
+    $pink: #ff1493;
+    .quote{ border-left: 5px solid $pink;}
+    .button{ background: $pink;}
+    .sidebar a:hover{ border-bottom-color: $pink;}
+    .footer a{ color: $pink;}
+    ```
+- if you need to change to a different shade of pink, just have to change the color value **once**
+    ```scss
+    $pink: #c71585;
+    ```
+- another example: variable in variable
+    ```scss
+    // Defining color values
+    $yellow: #fce473;
+    $pink: #c71585;
+    $green: #32cd32;
+    $blue: #1d90ff;
+
+    // Defining color types
+    $primary-color: $green;
+
+    .quote{ border-left: 5px solid $primary-color;}
+    .button{ background: $primary-color;}
+    .sidebar a:hover{ border-bottom-color: $primary-color;}
+    .footer a{ color: $primary-color;}
+    ```
+tiek2.github.io/path-doc/)
