@@ -373,3 +373,15 @@
         ```
     - the `%small-uppercase` rule is only here to provide a location for common properties
 
+- Difference between mixins, extensions, and placeholders:  
+    - @extend and %placeholder are more elegant and efficient, while mixins are more straightforward
+
+    |        | Definition | Referencing | Combines Selectors? | Allow Params? | Can be used on its own? |
+    | ------ |------      |------       |------               |------         |------                   |
+    | **Mixins** | @mixin name() | @include name() | No | `Yes` | No |
+    | **Extensions** | any class | @extend .class | `Yes` | No | `Yes` |
+    | **Placeholders** | %placeholderName | @extend %placeholderName | `Yes` | No | No |  
+&nbsp;  
+&nbsp;  
+
+
