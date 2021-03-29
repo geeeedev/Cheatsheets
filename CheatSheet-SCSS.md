@@ -285,3 +285,53 @@
             text-transform: uppercase;
         }
         ```
+    - @extend regroups common properites under a list of selectors
+    - @extend is more efficient than @mixin/@include, as it only writes the common properties **once**
+        ```scss
+        // scss
+        @mixin small-uppercase() {
+            color: lightslategrey;
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            line-height: 12px;
+            text-transform: uppercase;
+        }
+
+        .modal-background{
+            @include small-uppercase();
+        }
+
+        .product-link{
+            @include small-uppercase();
+        }
+
+        .image-pattern{
+            @include small-uppercase();
+        }
+
+        // generated css
+        .modal-background{
+            color: lightslategrey;
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            line-height: 12px;
+            text-transform: uppercase;
+        }
+
+        .product-link{
+            color: lightslategrey;
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            line-height: 12px;
+            text-transform: uppercase;
+        }
+
+        .image-pattern{
+            color: lightslategrey;
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            line-height: 12px;
+            text-transform: uppercase;
+        }
+        ```
+
