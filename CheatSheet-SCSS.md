@@ -83,3 +83,76 @@
     $mobile-space:        10px;
     $desktop-space:       35px;
     ```
+
+> ### [NESTING: prevents repeating selectors](https://marksheet.io/sass-nesting.html)
+- nesting CSS rules within parent/child selectors allow to define hierarchy selectors
+    ```scss
+    .parent{
+        .child{}        //using hierarchy translates into a space in CSS
+    }
+    .title{
+        color: $yellow;
+        strong{}
+        em{}
+    }
+    ```
+- will be compiled into CSS
+    ```css
+    .parent .child{}    <!-- a space btw .parent and .child defines hierarchy -->
+    .title{ color: #fce473 }
+    .title strong{} 
+    .title em{} 
+    ```
+- nesting CSS rules with pseudo-selectors (altered state) like :hover using ampersand
+- nesting CSS rules with joined classes using ampersand
+    ```scss
+    .parent{
+        &:hover{}       //using & translate into no space in CSS
+        &.another-class{}
+    }
+    ```
+- will be compiled into CSS
+    ```css
+    .parent:hover{}           <!-- pseudo-selectors have no space before -->
+    .parenet.another-class{}  <!-- HTML elements that have class="parent another-class" - no space -->
+    ```
+- more example from CSS to SCSS
+    ```css
+    <!-- this is CSS -->
+    .description{}
+    .description p{}
+    .description p a{}
+    .description p a:hover{}
+    .description p strong{}
+    .description table{}
+    .description table tr{}
+    .description table tr:nth-child(2n){}
+    .description table th,
+    .description table td{ color: #111111 }
+    .description table td.empty,
+    .description table th.empty{ font: "xxxxx" }
+    .description table th{}
+    ```
+    ```scss
+    //this is SCSS
+    .description{
+        p{
+            a{
+                &:hover{}
+            }
+            strong{}
+        }
+        table{
+            tr{
+                &:nth-child(2n){}
+            }
+            th,
+            td{
+                color: #111111
+                &.empty{ font: "xxxxx" }
+            }
+            th{}
+        }
+    }
+    ```
+
