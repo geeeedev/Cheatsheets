@@ -335,3 +335,41 @@
         }
         ```
 
+- placeholders:
+    - in the case the `.small-uppercase` **selector** is not needed, transform it into a **Sass placeholder** 
+    - replace the dot with a percentage sign `%`
+        ```scss
+        %small-uppercase{
+            color: lightslategrey;
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            line-height: 12px;
+            text-transform: uppercase;
+        }
+
+        .modal-background{
+            @extend %small-uppercase;
+        }
+
+        .product-link{
+            @extend %small-uppercase;
+        }
+
+        .image-pattern{
+            @extend %small-uppercase;
+        }
+        ```
+        ```css
+        <!-- generated css -->      <!-- note that .small-uppercase is NOT included in the common props list, unlike extensions -->
+        .modal-background,
+        .product-link,
+        .image-pattern{
+            color: lightslategrey;
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            line-height: 12px;
+            text-transform: uppercase;
+        }
+        ```
+    - the `%small-uppercase` rule is only here to provide a location for common properties
+
