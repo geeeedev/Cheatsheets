@@ -59,4 +59,27 @@
     .sidebar a:hover{ border-bottom-color: $primary-color;}
     .footer a{ color: $primary-color;}
     ```
-tiek2.github.io/path-doc/)
+- if you do decide to use `$blue` instead of `$green`, you'd only have to modify one line
+- setting other type of content
+    ```scss
+    // Colors
+    $yellow:              #fce473;
+    $pink:                #c71585;
+    $green:               #32cd32;
+    $blue:                #1d90ff;
+
+    $primary-color:       $blue;
+    $secondary-color:     $yellow;
+
+    // Fonts
+    $serif:               "Lora", "Playfair Display", Georgia, serif;
+    $sans-serif:          "Roboto", "Source Sans Pro", "Open Sans", Arial, sans-serif;
+    $monospace:           "Inconsolata", monospace;
+
+    $primary-font:        $sans-serif;
+    $secondary-font:      $serif;
+
+    // Spacing
+    $mobile-space:        10px;
+    $desktop-space:       35px;
+    ```
