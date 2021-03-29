@@ -156,3 +156,98 @@
     }
     ```
 
+> ### [MIXINS and EXTENSIONS: prevents repeating properties](https://marksheet.io/sass-mixins.html)
+- mixins:
+    - avoid writing the same CSS code over and over again
+    - custom CSS functions that can accept parameters
+    - can `include` to reuse function code whenever/wherever you want
+        ```scss
+        @mixin overlay(){   //overlay is name of mixin
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .modal-background{
+            @include overlay();     //reference overlay mixin using @include
+            background: black;
+            opacity: 0.9;
+        }
+        ```
+    - this .scss will be compiled into .css:
+        ```css
+        .modal-background{
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: black;
+            opacity: 0.9;
+        }
+        ```
+    - reusing mixin
+        ```scss
+        .modal-background{
+            @include overlay();
+        }
+        .product-link{
+            @include overlay();
+        }
+        .image-pattern{
+            @include overlay();
+        }
+        ```
+    - to alter the output, mixins can accept parameters
+        ```scss
+        @mixin border-radius($radius) {
+            -webkit-border-radius: $radius;
+            -moz-border-radius: $radius;
+            -ms-border-radius: $radius;
+                border-radius: $radius;
+        }
+
+        .box{
+            @include border-radius(3px);
+        }
+        ```
+    - can also include optional parameters with default value
+        ```scss
+        @mixin label($text: "Code", $background: $yellow, $color: rgba(black, 0.5)) {
+            position: relative;
+            &:before{
+                background: $background;
+                color: $color;
+                content: $text;
+                display: inline-block;
+                font-size: 0.6rem;
+                font-weight: 700;
+                height: 1rem;
+                left: 0;
+                letter-spacing: 0.1em;
+                line-height: 1rem;
+                padding: 0 0.5em;
+                position: absolute;
+                text-transform: uppercase;
+                top: 0;
+            }
+        }
+
+        div.highlighter-rouge{
+            @include label();       //div.highlighter-rouge will use the mixin's default values
+            &.css{
+                @include label("CSS", $blue, white);    //.css will use different labels and colors
+            }
+            &.scss{
+                @include label("SCSS", #c69, white);    //.scss will use different labels and colors
+            }
+        }
+        ```
+    - other mixin libraries:  
+        [Bourbon](https://bourbon.io)  
+        [Compass](https://compass-style.org)  
+        [Susy](https://susy.oddbird.net)  
+
+
+
