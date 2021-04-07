@@ -4,6 +4,12 @@
   `npx create-react-app app-name-no-capital-letters`
   > [WebPack](https://webpack.js.org/guides/getting-started/)
 
+- Run a react app  
+   `npm start`
+
+- Run a production build  
+   `npm run build`
+
 
 # JSX
 - Needed for all components written in JSX code
