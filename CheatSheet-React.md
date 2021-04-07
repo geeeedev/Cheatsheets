@@ -861,7 +861,7 @@
 
 - Ternary Operators with/without
    > Advantage: replace function (formMessage in this case) with code that ca go directly into React JSX
-   ```js
+   ```jsx
    import react, { useState } from  'react';
       
       
@@ -907,7 +907,7 @@
    };
    export default UserForm;
    ```
-   ```js
+   ```jsx
    const createUser = (e) => {
          e.preventDefault();
          const newUser = { username, email, password };
@@ -915,17 +915,19 @@
            setHasBeenSubmitted( true );
       };
 
-   <form onsubmit={ createUser }>
-       {   //accessing js expression
-           hasBeenSubmitted ? 
-           <h3>Thank you for submitting the form!</h3> :
-           <h3>Welcome, please submit the form.</h3> 
-       }   //done with js expression
-       <div>
-           <label>Username: <label> 
-           <input type="text" onchange={ (e) => setUsername(e.target.value) } />
-      </div>
-   </form>
+   return (
+      <form onsubmit={ createUser }>
+          {   //accessing js expression
+              hasBeenSubmitted ? 
+              <h3>Thank you for submitting the form!</h3> :
+              <h3>Welcome, please submit the form.</h3> 
+          }   //done with js expression
+          <div>
+              <label>Username: <label> 
+              <input type="text" onchange={ (e) => setUsername(e.target.value) } />
+         </div>
+      </form>
+   );
    ```
    > Leveraging JS EMPTY string as being "falsy" to apply ternaries
    ```js
