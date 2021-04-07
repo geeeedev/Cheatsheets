@@ -10,6 +10,36 @@
 - Run a production build  
    `npm run build`
 
+- super basic code structure example
+   ```jsx
+   //import statements
+   import React, {useState, useEffect} from "react";
+   import otherComponent from './componentDirectory/otherJSfile';
+   import { styledCSSComponents, forExample, fromUsingStyledComponenet, ifAny } from './styleDirectory/cssFileInJSExtension';
+
+   const funcName = (props) => {
+      //logic in JS
+      const [state, setState] = useState('');
+      const otherLogicFunction = () => {
+         //...code
+         return stmt;
+      }
+
+      //view output in HTML <=> JS
+      return ( 
+         <> 
+            <div className="veryBasicCSS">
+               <h1>Some Title</h1>
+               <OtherComponentHere />
+            </div>
+            <OrUsingFancyTagWithStyledComponent>
+               {someJSObjectHere}
+            </OrUsingFancyTagWithStyledComponent>
+         </>
+      );
+   }
+   ```   
+
 
 # JSX
 - Needed for all components written in JSX code
