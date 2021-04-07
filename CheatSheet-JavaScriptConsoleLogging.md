@@ -46,7 +46,8 @@
   let isItWorking = false;
   console.assert(isItWorking, "this is the reason why the test fails")
   ```
-  > changing isItWorking to true, then the message will NOT be logged/appeared.
+  > false result will cause the message to be logged.
+  > changing isItWorking to true, then the message will NOT appear/be logged.
 
 - console.count - Counting
   ```js
