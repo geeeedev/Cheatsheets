@@ -18,10 +18,15 @@
    import { styledCSSComponents, forExample, fromUsingStyledComponenet, ifAny } from './styleDirectory/cssFileInJSExtension';
 
    const funcName = (props) => {
+      //states in JS
+      const [stateOne, setStateOne] = useState('');
+      const [stateTwo, setStateTwo] = useState('');
+      const [stateList, setStateList] = useState('');
+      
       //logic in JS
-      const [state, setState] = useState('');
       const otherLogicFunction = () => {
          //...code
+         //maybe a func with useEffect if applicable
          return stmt;
       }
 
