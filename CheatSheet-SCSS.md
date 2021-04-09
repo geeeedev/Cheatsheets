@@ -31,12 +31,14 @@
     ```
     brew install sass/sass/sass
     ```
-- install using Node.js and npm (pure JS implementation of Dart Sass - super slow! - not recommanded)
+- install using Node.js npm (pure JS implementation of Dart Sass - super slow! - not recommanded)
     ```
     npm install -g sass
     ```
-- also read resources [adding to your PATH](https://katiek2.github.io/path-doc/)  
-- NOTE: Node-Sass integrates with react/Node.js but it is deprecated (obsolete) and should avoid using it.
+    - NOTE: Node-Sass is another which integrates with react/webpack but Node-Sass is deprecated (obsolete) and should be avoided.  
+    - React-scripts uses sass-loader v8 which prefers node-sass over sass (Dart JS version)
+
+> also read resources [adding to your PATH](https://katiek2.github.io/path-doc/)  
 
 &nbsp;  
 
