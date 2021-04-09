@@ -20,20 +20,23 @@
 &nbsp;  
 
 > ### INSTALLING SASS
-- instailling Sass on the **command line** will enable to run the sass executable to compile .sass and .scss files to .css files.
+- instailling Sass on the **command line** will enable running the sass executable to compile .sass and .scss files to .css files.
     ```
     sass source/stylesheets/index.scss build/stylesheets/index.css
+    sass src/CSS/styles.scss build/CSS/styles.css — watch
+    //watch means SASS is watching for changes to update the CSS files after each change
     ```
 - [follow here](https://sass-lang.com/install)
-- install on Mac OSX using Homebrew (the Dart Sass)
+- install on Mac OSX using Homebrew (the Dart Sass - Standalone/DartVM version - fastest/latest/greatest)
     ```
     brew install sass/sass/sass
     ```
-- install using Node.js and npm (but this pure JS implementation runs slower than Dart Sass)
+- install using Node.js and npm (pure JS implementation of Dart Sass - super slow! - not recommanded)
     ```
     npm install -g sass
     ```
 - also read resources [adding to your PATH](https://katiek2.github.io/path-doc/)  
+- NOTE: Node-Sass integrates with react/Node.js but it is deprecated (obsolete) and should avoid using it.
 
 &nbsp;  
 
