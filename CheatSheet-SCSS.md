@@ -20,17 +20,20 @@
 &nbsp;  
 
 > ### INSTALLING SASS
-- instailling Sass on the **command line** will enable running the sass executable to compile .sass and .scss files to .css files.
-    ```
-    sass source/stylesheets/index.scss build/stylesheets/index.css
-    sass src/CSS/styles.scss build/CSS/styles.css — watch
-    //watch means SASS is watching for changes to update the CSS files after each change
-    ```
-- [follow here](https://sass-lang.com/install)
-- install on Mac OSX using Homebrew (the Dart Sass - Standalone/DartVM version - fastest/latest/greatest)
+- [follow installation here](https://sass-lang.com/install)
+- install on Mac OSX using Homebrew (the Dart Sass - Standalone/DartVM version - fastest/latest/greatest/Recommended)
     ```
     brew install sass/sass/sass
     ```
+    - instailling Dart Sass on the command line will enable running the sass executable to compile .sass and .scss files to .css files. (Recommended!)
+        ```
+        sass source/stylesheets/index.scss build/stylesheets/index.css
+        sass SCSS/styles.scss CSS/styles.css   —- watch
+        ```
+        > watch means SASS is watching for changes to update the CSS files after each change  
+        Once compile is done, .css files are available for importing into project as usual  
+        a .css.map file will also be generated 
+
 - install using Node.js npm (pure JS implementation of Dart Sass - super slow! - NOT recommanded)
     ```
     npm install -g sass
@@ -39,7 +42,8 @@
     >- Node-Sass is another which integrates with react/webpack but Node-Sass is deprecated (obsolete) and should be avoided in new project.  
         1. `npm install node-sass@4.12.0` - version corresponds to existing Node version  
         2. import .scss files into component .js files as needed  
-        3. `npm start` will automatically compile scss to css first
+        3. `npm start` will automatically compile scss to css first  
+        4. `npm uninstall node-sass` to uninstall if needed
     >- While sass (Dart JS version - NOT recommended as mentioned above) can work with React-scripts, it uses sass-loader v8 which prefers node-sass over sass (Dart JS version) - also NOT recommended
     >- Best to stick with Dart Sass Standalone version and run Dart compiler `sass` separately for best performance for now!
 
