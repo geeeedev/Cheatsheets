@@ -37,6 +37,9 @@
     ```
     > NOTE asof April 2021:
     >- Node-Sass is another which integrates with react/webpack but Node-Sass is deprecated (obsolete) and should be avoided in new project.  
+        1. `npm install node-sass@4.12.0` - version corresponds to existing Node version  
+        2. import .scss files into component .js files as needed  
+        3. `npm start` will automatically compile scss to css first
     >- While sass (Dart JS version - NOT recommended as mentioned above) can work with React-scripts, it uses sass-loader v8 which prefers node-sass over sass (Dart JS version) - also NOT recommended
     >- Best to stick with Dart Sass Standalone version and run Dart compiler `sass` separately for best performance for now!
 
