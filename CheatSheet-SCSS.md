@@ -22,6 +22,7 @@
 > ### INSTALLING SASS
 - [follow installation here](https://sass-lang.com/install)
 - install on Mac OSX using Homebrew (the Dart Sass - Standalone/DartVM version - fastest/latest/greatest/Recommended)
+- Note the path to the Dart SDK: /usr/local/opt/dart/libexec
     ```
     brew install sass/sass/sass
     ```
@@ -48,6 +49,7 @@
     >- Best to stick with Dart Sass Standalone version and run Dart compiler `sass` separately for best performance for now!
 
 > also read resources [adding to your PATH](https://katiek2.github.io/path-doc/)  
+> Note the path to the Dart SDK: /usr/local/opt/dart/libexec
 
 &nbsp;  
 
