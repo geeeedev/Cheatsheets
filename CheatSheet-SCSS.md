@@ -34,7 +34,7 @@
         > watch means SASS is watching for changes to update the CSS files after each change  
         Once compile is done, .css files are available for importing into project as usual  
         A .css.map file will also be generated as part of the compilation  
-    - Can run simultaneously with react project in development.  Just `npm start` on one terminal, and `sass <source.scss> <target.css> --watch` on another terminal.  Could even do a third terminal with `sass ... --watch` for modularizig .scss files.
+    - Can run simultaneously with react project in development.  Just `npm start` on one terminal, and `sass <source.scss> <target.css> --watch` on another terminal.  Could even do a third terminal with `sass ... --watch` for running modularized .scss files.
 &nbsp;  
 
 - install using Node.js npm (pure JS implementation of Dart Sass - super slow! - NOT recommanded)
@@ -83,6 +83,7 @@
     $pink: #c71585;
     ```
 - another example: variable in variable
+- if you do decide to use `$blue` instead of `$green`, you'd only have to modify one line
     ```scss
     // Defining color values
     $yellow: #fce473;
@@ -98,7 +99,6 @@
     .sidebar a:hover{ border-bottom-color: $primary-color;}
     .footer a{ color: $primary-color;}
     ```
-- if you do decide to use `$blue` instead of `$green`, you'd only have to modify one line
 - setting other type of content
     ```scss
     // Colors
@@ -122,7 +122,72 @@
     $mobile-space:        10px;
     $desktop-space:       35px;
     ```
+- can modularize all variables into its own partial .scss file
+- meant to import this partial .scss file into other .scss files for use
+- prefix the partial file name with an underscore (_) so Sass knows *not* to compile this into its own .css file
+    ```scss
+    //_variables.scss file
 
+    //color
+    $warn-red: red;
+    $grey-blue: rgba(48, 64, 150, 0.829); //#61dafb;
+    $brown: rgb(148, 74, 74);
+
+    //alignment
+    $center-align: center;
+    $left-align: left;
+
+    //debugging
+    $debug-green: 2px dotted green;
+    $debug-red: 2px dotted red;
+    $debug-orange: 2px dotted orange;
+    $debug-blue: 2px dotted blue;
+    $debug-pink: 2px dotted palevioletred;
+    ```
+- import the _variables.scss file into other .scss files needing these variables
+- import partial file with keyword `@use "filePath/scssPartialFilenameWithout_Underscore";` 
+- import without path if all .scss are in the same directory `@use "variables";` - notice exclude the underscore! 
+    ```scss
+    // LoginDisplay.scss file
+    @use "variables";
+
+    .display {
+        color: variables.$brown;
+        font-weight: bold;
+        margin: 40px;
+        padding: 40px;
+        outline: variables.$debug-pink;
+    }
+
+    .red {
+        outline: variables.$debug-red;
+    }
+
+    .green{
+        outline: variables.$debug-green;
+    }
+    ```
+- could also import with a variable for quick referencing and typing less
+    ```scss
+    // LoginDisplay.scss file
+    @use "variables" as v;
+
+    .display {
+        color: v.$brown;
+        font-weight: bold;
+        margin: 40px;
+        padding: 40px;
+        outline: v.$debug-pink;
+    }
+
+    .red {
+        outline: v.$debug-red;
+    }
+
+    .green{
+        outline: v.$debug-green;
+    }
+    ```
 
 > ### [NESTING: prevents repeating selectors](https://marksheet.io/sass-nesting.html)
 - nesting CSS rules within parent/child selectors allow to define hierarchy selectors
