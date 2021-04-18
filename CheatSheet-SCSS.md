@@ -216,7 +216,7 @@
     ```
 - will be compiled into CSS
     ```css
-    .parent .child{}    <!-- a space btw .parent and .child defines hierarchy -->
+    .parent .child{}    <!-- a space btw .parent and .child defines hierarchy in css -->
     .title{ color: #fce473 }
     .title strong{} 
     .title em{} 
@@ -282,7 +282,7 @@
     - custom CSS functions that can accept parameters
     - can `include` to reuse function code whenever/wherever you want
         ```scss
-        @mixin overlay(){   //overlay is name of mixin
+        @mixin overlay(){   //overlay is the name of mixin
             bottom: 0;
             left: 0;
             position: absolute;
@@ -498,9 +498,9 @@
 
     |        | Definition | Referencing | Combines Selectors? | Allow Params? | Can be used on its own? |
     | ------ |------      |------       |------               |------         |------                   |
-    | **Mixins** | @mixin name() | @include name() | No | `Yes` | No |
-    | **Extensions** | any class | @extend .class | `Yes` | No | `Yes` |
-    | **Placeholders** | %placeholderName | @extend %placeholderName | `Yes` | No | No |  
+    | **Mixins** | @mixin name() {...} | @include name(); | No | `Yes` | No |
+    | **Extensions** | .any-class{...} | @extend .any-class; | `Yes` | No | `Yes` |
+    | **Placeholders** | %placeholder-name{...} | @extend %placeholder-name; | `Yes` | No | No |  
 &nbsp;  
 &nbsp;  
 
