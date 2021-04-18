@@ -28,13 +28,26 @@
     ```
     - instailling Dart Sass on the command line will enable running the sass executable to compile .sass and .scss files to .css files. (Recommended!)
         ```bash
-        sass source/stylesheets/index.scss build/stylesheets/index.css
-        sass SCSS/styles.scss CSS/styles.css   —- watch
+        sass source/path/scssFileName.scss build/path/cssFileName.css
+        sass ./src/comp/SCSS/componentName.scss ./src/comp/CSS/componentName.css   —- watch
         ```
         > watch means SASS is watching for changes to update the CSS files after each change  
         Once compile is done, .css files are available for importing into project as usual  
         A .css.map file will also be generated as part of the compilation  
-    - Can run simultaneously with react project in development.  Just `npm start` on one terminal, and `sass <source.scss> <target.css> --watch` on another terminal.  Could even do a third terminal with `sass ... --watch` for running modularized .scss files.
+    - Can run simultaneously with react project in development.  Just `npm start` on one terminal, and `sass <source.scss> <target.css> --watch` on another terminal.  Could even do a third terminal with `sass ... --watch` for running modularized .scss files.  
+    - I find it helpful to add this comment at the top of each scss file as a quick reminder
+    - the future me can quickly pop this in the terminal and kick start sass
+    - be sure to keep the path or filename in comment up-to-date  :)
+        ```scss
+        //@ top of a LoginDisplay.scss file
+
+        //compile scss:
+        //sass ./src/compFormSCSS/scss/LoginDisplay.scss ./src/compFormSCSS/css/LoginDisplay.css --watch
+
+        @use "variables" as v;
+        //...
+        //...
+        ```
 &nbsp;  
 
 - install using Node.js npm (pure JS implementation of Dart Sass - super slow! - NOT recommanded)
