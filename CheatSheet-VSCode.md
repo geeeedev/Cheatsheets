@@ -1,6 +1,8 @@
 ## Purpose: Remind myself of the retrieval and re-installation of the VSCode extensions  
 
 &nbsp;  
+[*Could try porting VSCode config using Settings Sync*](https://itnext.io/settings-sync-with-vs-code-c3d4f126989)  
+&nbsp;  
 
 - List the installed extensions in Terminal
     ```bash
