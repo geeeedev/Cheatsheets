@@ -108,7 +108,7 @@ which node                           //should give current location of node: usr
   npm init @usr/foo                    //same as `npx @usr/create-foo`
   ```
 
-- start up a legacy npm project with just pacakge.json file created (bare bone)
+- start up a legacy Node/npm project with just pacakge.json file created (bare bone)
   ```js
   npm init -y         // without haivng it ask questions
   ```
@@ -191,14 +191,20 @@ which node                           //should give current location of node: usr
 - directory structure
   - /server:
     - server.js
+    - load and set up Express for server
     - /config
       - mongoose.config.js
-    - /controllers
-      - \<appName>.controller.js
+      - create config to set up mongoose connection to db
     - /models
       - \<appName>.models.js
+      - create db schema and model
+    - /controllers
+      - \<appName>.controller.js
+      - direct request and response communication to fetch data in db
     - /routes
       - \<appName>.routes.js
+      - define routes, connect server request types to corresponding controllers
+      - this is setting up our own API (define routes, hook it up to controllers)
 
 
 #### `server.js` - Server Setup
@@ -213,7 +219,7 @@ which node                           //should give current location of node: usr
 
   //server
   const app = express();
-  app.use(express.json()); //for req.body parsing
+  app.use(express.json()); //for enabling req.body parsing
   app.use(cors());         //for cross-origin resource sharing (CORS)
 
   //routes
