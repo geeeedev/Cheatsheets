@@ -190,8 +190,10 @@ which node                           //should give current location of node: usr
 
 - directory structure
   - /server:
+  - a Server folder directory to house all backend server code
+  - run `mkdir config/ controllers/ models/ routes/` to create 4 folders at once
     - server.js
-    - load and set up Express for server
+      - load and set up Express for server
     - /config
       - mongoose.config.js
       - create config to set up mongoose connection to db
