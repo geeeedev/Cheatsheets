@@ -5,6 +5,11 @@
 \
 &nbsp;
 
+## enable angle brackets with escape char `\`
+\<appName>.models.js
+\
+&nbsp;
+
 ## link an URL:
 [Handling Events](https://reactjs.org/docs/handling-events.html)
 \
