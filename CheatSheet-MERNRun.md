@@ -116,13 +116,13 @@ which node                           //should give current location of node: usr
 ## Executing app:
 
 - Run React app (in separate console)
-
-  ```
+  ```bash
   npm start   OR   npm run start
   ```
 
 - Run server (in separate console)
-  ```
+  ```bash
+  cd server           // dont forget to cd into the server dir to avoid error
   nodemon server.js
   ```
 
