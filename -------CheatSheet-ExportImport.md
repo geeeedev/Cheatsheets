@@ -6,10 +6,16 @@
 
 >> Note2Self: This is not done, need to read above 3 articles to understand better to compile md notes ....
 
+Earlier JavaScript editions were not designed with modules in mind.  
+Developers came up with different patterns to simulate modular design in JS.  
+[This article shows the various patterns with code example](https://www.jvandemo.com/a-10-minute-primer-to-javascript-modules-module-formats-module-loaders-and-module-bundlers/)
+A module format is basicallly the syntax we use to define a module.  
+Both CommonJS and ES Module are module formats
+
 CommonJS (CJS)
-- standard used in Node.js
+- standard format used in Node.js
 - npm ecosystem is built upon this format
-- require('./xxxxx)
+- require('./xxxxx')
 - exports.xxxxxx 
 - module.exports xxxxxxx
 ```js 
@@ -33,8 +39,49 @@ console.log(`Using import: ${funcFile.aFunc()}`);
 
 ES Module (ESM)
 - From JavaScript ES6 (ES2015) 
-- supports a native module formt
-- uses `export` to export a module's public API
-- uses `import` to import module
+- this is the JS native module formt
+- uses `export` token to export a module's public API
+- uses `import` token to import module
 ```js
+// this filename: lib.js
+// Export this function
+export function thisFunc(){
+   console.log('Print to log');
+}
+
+// Do not export this function
+function otherPrivateFunc(){
+   // ...
+}
 ```
+```js
+import { thisFunc } from './lib';   
+
+thisFunc();
+```
+```js
+import { thisFunc as runThis } from './lib';    //give import an alias using as
+
+runThis();
+```
+```js
+import * as lib from './lib';                   //load an entire module as obj
+
+lib.thisFunc();
+```
+```js
+export default function thisDefaultFunc(){             //ESM format supports default exports
+   console.log("print");
+}
+
+export function anotherOne(){                   //export non-default function
+   console.log("log");
+}
+```
+```js
+import thisDefaultFunc, { anotherOne } from './lib';   //import default without {}; else import with {}
+
+thisFunc();
+anotherOne();
+```
+
