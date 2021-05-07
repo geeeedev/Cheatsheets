@@ -1,16 +1,19 @@
 ## Purpose: Remind myself the differences on Import/Export between CommonJS (CJS) and ES Module (ESM)
 
-1. [Explains CommonJS](https://www.sitepoint.com/understanding-module-exports-exports-node-js/)
 1. [Explains Various](https://www.jvandemo.com/a-10-minute-primer-to-javascript-modules-module-formats-module-loaders-and-module-bundlers/)
+1. [Explains CommonJS](https://www.sitepoint.com/understanding-module-exports-exports-node-js/)
 1. [module.exports vs. exports](https://www.hacksparrow.com/nodejs/exports-vs-module-exports.html)
 
->> Note2Self: This is not done, need to read above 3 articles to understand better to compile md notes ....
+*Note2Self: This is not done, need to read above 3 articles to understand better to compile md notes ....*
+
+> A module is a reusable piece of code that encapsulates implementation details 
+and exposes a public API so it can be easily loaded and used by other code.
 
 Earlier JavaScript editions were not designed with modules in mind.  
 Developers came up with different patterns to simulate modular design in JS.  
 [This article shows the various patterns with code example](https://www.jvandemo.com/a-10-minute-primer-to-javascript-modules-module-formats-module-loaders-and-module-bundlers/)
-A module format is basicallly the syntax we use to define a module.  
-Both CommonJS and ES Module are module formats
+> A module format is basicallly the syntax we use to define a module.  
+Both CommonJS and ES Module are module formats.
 
 CommonJS (CJS)
 - standard format used in Node.js
@@ -47,8 +50,8 @@ const funcTwo = () => {
 module.exports = funcTwo;
 ```
 ```js
-const funcTwo = require('./index.js');
 
+const funcTwo = require('./index.js');
 funcTwo();
 ```
 
