@@ -19,7 +19,7 @@ CommonJS (CJS)
 - exports.xxxxxx 
 - module.exports xxxxxxx
 ```js 
-const fs = require('fs');
+const fs = require('fs');     //built-in/native JS modules
 
 fs.someMethod(someArguments);
 ```
@@ -31,9 +31,25 @@ const aFunc = () => {
 exports.aFunc = aFunc;
 ```
 ```js
-const funcFile = require('./FuncExportFileName');
+const funcFile = require('./FuncExportFileName.js');        //??? not sure if this is totally correct???
 
-console.log(`Using import: ${funcFile.aFunc()}`);
+console.log(`Using import: ${funcFile.aFunc()}`);           //??? not sure if this is totally correct???
+```
+```js
+//index.js
+const funcOne = () =>{
+   //...
+}
+const funcTwo = () => {
+   return "something";
+}
+
+module.exports = funcTwo;
+```
+```js
+const funcTwo = require('./index.js');
+
+funcTwo();
 ```
 
 
@@ -84,4 +100,25 @@ import thisDefaultFunc, { anotherOne } from './lib';   //import default without 
 thisFunc();
 anotherOne();
 ```
+```js
+//can export primitive values or obj
+// lib.js
 
+// Export default function
+export default function sayHello(){  
+  console.log('Hello');
+}
+
+// Export non-default function
+export function sayGoodbye(){  
+  console.log('Goodbye');
+}
+
+// Export simple value
+export const apiUrl = '...';
+
+// Export object
+export const settings = {  
+  debug: true
+}
+```
