@@ -1,6 +1,8 @@
-## Purpose: Remind myself how to get started with Git and GitHub  
+## Purpose: Remind myself of the Useful Git Commands
+
 &nbsp;
 &nbsp;
+
 ### Git Commands
 | Commands | Meaning | Resources |
 | :--- | :--- | :---: |
@@ -25,26 +27,27 @@
 | | | |
 | `git log` | shows all the backups created in the repository |  |
 | `git clone <url>` | clones a remote repository from the provided URL to your current local folder directory <br> `git clone https://github.com/geeeedev/chittychat.git` |  |
-| `git fetch` | ... ... ... |  |
+| `git fetch` | ... ... ... ??? ??? |  |
 | | | |
 | `git remote remove <remoteRepoName>` | delete remote repo you added |  |
 | `git remote` | list all remote repos you are connected to |  |
 | `git remote show <remoteRepoName>` | see more info about a remote repo <br> `git remote show origin` |  |
-| `git remote get-url origin` | list the URL address of the remote repo (origin) | ---: |
-| `git blame <filePath/filePath/fileName.ext>` | shows who wrote which line of code with timestamp, in other words who is to be blamed for that particular line of code | ---: |
-| | | |
-| | | |
+| `git remote get-url origin` | list the URL address of the remote repo (origin) |  |
+| `git blame <filePath/filePath/fileName.ext>` | shows who wrote which line of code with timestamp, in other words who is to be blamed for that particular line of code |  |
+| | | |  
 
 ![](./Screenshots/git-Commands.png)
 
-
-
-
+&nbsp;
+&nbsp;
 
 ### Git Config
-- git config --global user.name "..." - set username
-- git config --global user.email xxxxxx@xxxx.xxx - set email
-- git config --global --list - verify settings
-- git config --global color.ui "auto" - turn on color codes in Git output in Terminal
+| Commands | Meaning |
+| :--- | :--- |
+| `git config --global user.name "..."` | set username |
+| `git config --global user.email xxxxxx@xxxx.xxx` | set email |
+| `git config --global --list` | list and verify settings |
+| `git config --global color.ui "auto"` | turn on color codes in Git output in Terminal |
+| | | |
 
 ![](./Screenshots/git-Config.png)
