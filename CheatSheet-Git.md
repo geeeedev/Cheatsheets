@@ -1,15 +1,28 @@
 ## Purpose: Remind myself how to get started with Git and GitHub
 
 ### Git Commands
-
-- git init - initialize the repository.
-- git add . - add all the files that were changed since the last back up to the staging area
-- git add `filename with extension`  - add the specified file to staging
-- git status - shows you all the files that were changed since the last backup and which ones are already added to the staging area.
-- git commit -m "..." - commits the changes to the repository.
-- git checkout ____ - switches to the branch name provided in your git repository. This will create a new branch if the name provided doesn't exist.
-- git branch - shows all of your git branches and marks the one you are currently on.
-- git log - shows all the backups created in the repository.
+| Commands | Meaning ... | Examples |
+| :--- | :--- | ---: |
+| `git init`  | initialize a local git repository | 
+| `git add .` | add all the files that were changed since the last back up to the staging area | 
+| `git add <filename with extension>` | add the specified file to staging |
+| `git status` | shows all the files that were changed since the last backup and which ones are already added to the staging area |
+| `git commit -m "..." ` | commits the changes to the local git repository | 
+| `git checkout -b <branch name> <optional From branch>` | switches to the branch name provided in local git repository.  <br>will create a new branch *and* switch to it if the branch name provided does not exist.  <br>this replaces below git branch and git switch two steps| ---: |
+| `git branch <branch name>` | creates a new branch using branch name only - does *not* switch over to the newly created branch | ---: |
+| `git checkout <branch name>` | switches over to the branch name | ---: |
+| `git branch` | shows all of your git branches and marks the one you are currently on in green | ---: |
+| :--- | :---: | ---: |
+| :--- | :---: | ---: |
+| :--- | :---: | ---: |
+-  - 
+-  - 
+-   - 
+-  - 
+-  - 
+-  ____ - 
+-  - 
+-  - shows all the backups created in the repository.
 - git blame ____ - shows who wrote which line of code or in other words who is to be blamed for that particular line of code.
 - git remote add origin ____ - tells git to add a remote repo with the URL ___.
    ```
