@@ -5,6 +5,12 @@
 \
 &nbsp;
 
+## italic & bold:
+ *\* for Italic Only \**  
+ **\*\* for Bold Only \*\***  
+ ***\*\*\* for Italic and Bold \*\*\****  
+&nbsp;
+
 ## enable angle brackets with escape char `\`
 \<appName>.models.js
 \
