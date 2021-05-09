@@ -28,6 +28,8 @@
 | `git log` | shows all the backups created in the repository |  |
 | `git clone <url>` | clones a remote repository from the provided URL to your current local folder directory <br> `git clone https://github.com/geeeedev/chittychat.git` |  |
 | `git fetch` | ... ... ... ??? ??? |  |
+| `git stash` | ... ... ... ??? ??? |  |
+| `git tag`   | ... ... ... ??? ??? |  |
 | | | |
 | `git remote remove <remoteRepoName>` | delete remote repo you added |  |
 | `git remote` | list all remote repos you are connected to |  |
