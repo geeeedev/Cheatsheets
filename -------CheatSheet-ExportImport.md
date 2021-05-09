@@ -59,7 +59,7 @@ funcTwo();
 ES Module (ESM)
 - From JavaScript ES6 (ES2015) 
 - this is the JS native module formt
-- uses `export` token to export a module's public API
+- uses `export` or `export default` token to export a module's public API
 - uses `import` token to import module
 ```js
 // this filename: lib.js
@@ -89,7 +89,7 @@ import * as lib from './lib';                   //load an entire module as obj
 lib.thisFunc();
 ```
 ```js
-export default function thisDefaultFunc(){             //ESM format supports default exports
+export default function thisDefaultFunc(){      //ESM format supports default exports
    console.log("print");
 }
 
@@ -125,3 +125,11 @@ export const settings = {
   debug: true
 }
 ```
+```js
+const reactFunction = () =>{
+   //...
+}
+
+export default reactFunction;
+```
+
