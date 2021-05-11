@@ -12,10 +12,13 @@
 | `git commit -m "..." ` | commits the changes to the local git repository |  |
 | `git remote add origin https://---.git` | tells git to add a remote repo (origin: GitHub or GitLab or BitBucket) with the provided URL location  <br> `git remote add origin https://github.com/<gitub_Username>/<github_Repo_Name>.git` <br>`git remote add origin https://github.com/geeeedev/sandbox-react.git` |  |
 | | | |
-| `git push` | push the changes to the remote repository from your local repository <br> `git push origin master`    //origin = GitHub repository; master = our local repository |  |
+| `git push` | push the changes to the remote repository from your local repository <br> `git push origin` &nbsp;&nbsp;&nbsp;//origin = GitHub repo  <br> `git push origin master` &nbsp;&nbsp;&nbsp;//master = our local repo |  |
+| `git push --all ` | push all branches to remote repository <br> `git push --all origin`  |  |
 | `git pull` | pull the changes from the connected remote repository to your current local directory |  |
 | `git status` | shows all the files that were changed since the last backup and which ones are already added to the staging area |  |
 | `git status <branchName>` | shows all the files that were changed since the last backup and which ones are already added to the staging area |  |
+| `git diff` | view all merge conflicts |  |
+| `git diff --base` | view merge conflicts against the base file |  |
 | | | |
 | `git checkout -b <branchName> <optionalFromBranch>` | switches to the branch name provided in local git repository.  <br>will create a new branch *and* switch to it if the branch name provided does not exist.  <br>this replaces below git branch and git switch two steps| [learn more](https://www.atlassian.com/git/tutorials/using-branches) |
 | `git branch <branchName>` | creates a new branch using branch name only - does *not* switch over to the newly created branch | [learn more](https://www.atlassian.com/git/tutorials/using-branches) |
@@ -25,7 +28,7 @@
 | `git branch -d <branchName>` | deletes the provided branch name *with safe operation* to prevent deletion when unmerged changes exist |  |
 | `git branch -D <branchName>` | *FORCE* deletes the provided branch name regardless of unmerged changes existence  |  |
 | | | |
-| `git log` | shows all the backups created in the repository |  |
+| `git log` | shows all the backups created in the repository  |  |
 | `git clone <url>` | clones a remote repository from the provided URL to your current local folder directory <br> `git clone https://github.com/geeeedev/chittychat.git` |  |
 | `git fetch` | ... ... ... ??? ??? |  |
 | `git stash` | ... ... ... ??? ??? |  |
