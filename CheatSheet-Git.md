@@ -17,15 +17,15 @@
 | `git pull` | pull the changes from the connected remote repository to your current local directory |  |
 | `git status` | shows all the files that were changed since the last backup and which ones are already added to the staging area |  |
 | `git status <branchName>` | shows all the files that were changed since the last backup and which ones are already added to the staging area |  |
-| `git diff` | view all merge conflicts (when conflict occurs after git merge) |  |
-| `git diff --base` | view merge conflicts against the base file |  |
 | | | |
 | `git checkout -b <branchName> <optionalFromBranch>` | switches to the branch name provided in local git repository.  <br>will create a new branch *and* switch to it if the branch name provided does not exist.  <br>this replaces below git branch and git switch two steps| [learn more](https://www.atlassian.com/git/tutorials/using-branches) |
 | `git branch <branchName>` | creates a new branch using branch name only - does *not* switch over to the newly created branch | [learn more](https://www.atlassian.com/git/tutorials/using-branches) |
 | `git checkout <branchName>` | switches over to the provided branch name | [learn more](https://www.atlassian.com/git/tutorials/using-branches) |
-| `git checkout -` | quick switches between last two branches | [learn more](https://medium.com/@gitship/15-git-hacks-to-save-your-life-as-a-developer-aa8808846dbb) |
+| `git checkout -` | quick switches between last two working branches | [learn more](https://medium.com/@gitship/15-git-hacks-to-save-your-life-as-a-developer-aa8808846dbb) |
 | `git branch` | shows all of your git branches and marks the one you are currently on in green | [learn more](https://www.atlassian.com/git/tutorials/using-branches) |
 | `git merge <branchName>` | merges provided branch name to existing (main) branch - be sure to `checkout` and switch over to the main branch first  | [learn more](https://www.atlassian.com/git/tutorials/using-branches) |
+| `git diff` | view all merge conflicts (when conflict occurs after git merge) |  |
+| `git diff --base` | view merge conflicts against the base file |  |
 | `git branch -d <branchName>` | deletes the provided branch name *with safe operation* to prevent deletion when unmerged changes exist |  |
 | `git branch -D <branchName>` | *FORCE* deletes the provided branch name regardless of unmerged changes existence  |  |
 | | | |
