@@ -17,7 +17,7 @@
 | `git pull` | pull the changes from the connected remote repository to your current local directory |  |
 | `git status` | shows all the files that were changed since the last backup and which ones are already added to the staging area |  |
 | `git status <branchName>` | shows all the files that were changed since the last backup and which ones are already added to the staging area |  |
-| `git diff` | view all merge conflicts |  |
+| `git diff` | view all merge conflicts (when conflict occurs after git merge) |  |
 | `git diff --base` | view merge conflicts against the base file |  |
 | | | |
 | `git checkout -b <branchName> <optionalFromBranch>` | switches to the branch name provided in local git repository.  <br>will create a new branch *and* switch to it if the branch name provided does not exist.  <br>this replaces below git branch and git switch two steps| [learn more](https://www.atlassian.com/git/tutorials/using-branches) |
