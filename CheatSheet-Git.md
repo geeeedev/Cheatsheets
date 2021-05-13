@@ -29,11 +29,12 @@
 | `git branch -d <branchName>` | deletes the provided branch name *with safe operation* to prevent deletion when unmerged changes exist |  |
 | `git branch -D <branchName>` | *FORCE* deletes the provided branch name regardless of unmerged changes existence  |  |
 | | | |
-| `git stash` | temporarily stash away all local changes to yield a clean working copy <br> best for: have some local changes not ready to be committed, but need to start working on something else, like an urgent bug fixes |  |
+| `git stash` | temporarily stash away all local changes to yield a clean working copy <br> Best for: have some local changes not ready to be committed, but need to start working on something else, like an urgent bug fixes |  |
 | `git stash list` | shows all git stash items; newest Stash always at top of list `stash@{0}` <br> older Stashes have higher numbers `stash@{1}`, `stash@{2}`, etc. |  |
-| `git stash pop` | restore and apply the newest Stash and *clear* it from Stash storage <br>  Stash is not bound to the branch which created it: when restoring it, the changes will be applied to current HEAD branch, whichever this may be. So be sure current working environment is ready for the overlay |  |
-| `git stash apply <stashName>` | restore and apply the specified Stash but will remain saved in Stash storage <br> `git stash apply stash@{1}`|  |
-| `git stash drop <stashName>` | remove and clear specified Stash from Stash storage <br> `git stash drop stash@{2}` |  |
+| `git stash pop` | restore and apply the newest Stash and *clear* it from Stash storage <br> if there are more Stashes, they will move up the list `stash@{1}` is not become the new `stash@{0}` <br>  Stash is not bound to the branch which created it: when restoring it, the changes will be applied to current HEAD branch, whichever this may be. So be sure current working environment is ready for the overlay |  |
+| `git stash apply <stashName>` | restore and apply the specified Stash but it will remain saved on the Stash list <br> `git stash apply stash@{1}`|  |
+| `git stash drop <stashName>` | remove and clear the specified Stash from Stash list <br> `git stash drop stash@{2}` |  |
+| `git restore <path/path/filename.ext>`| discard all changes in working directory revert back to before any changes <br> works well with `git stash apply <>` | |
 | | | |
 | `git log` | shows all the backups created in the repository <br> type 'q' to exit log |  |
 | `git clone <url>` | clones a remote repository from the provided URL to your current local folder directory <br> `git clone https://github.com/geeeedev/chittychat.git` |  |
