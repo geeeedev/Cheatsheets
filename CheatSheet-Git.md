@@ -24,16 +24,16 @@
 | `git checkout -` | quick switches between last two working branches | [learn more](https://medium.com/@gitship/15-git-hacks-to-save-your-life-as-a-developer-aa8808846dbb) |
 | `git branch` | shows all of your git branches and marks the one you are currently on in green | [learn more](https://www.atlassian.com/git/tutorials/using-branches) |
 | `git merge <branchName>` | merges provided branch name to existing (main) branch - be sure to `checkout` and switch over to the main branch first  | [learn more](https://www.atlassian.com/git/tutorials/using-branches) |
-| `git diff` | view all merge conflicts (when conflict occurs after git merge) |  |
 | `git diff --base` | view merge conflicts against the base file |  |
 | `git branch -d <branchName>` | deletes the provided branch name *with safe operation* to prevent deletion when unmerged changes exist |  |
 | `git branch -D <branchName>` | *FORCE* deletes the provided branch name regardless of unmerged changes existence  |  |
 | | | |
-| `git stash` | temporarily stash away all local changes to yield a clean working copy <br> Best for: have some local changes not ready to be committed, but need to start working on something else, like an urgent bug fixes |  |
-| `git stash list` | shows all git stash items; newest Stash always at top of list `stash@{0}` <br> older Stashes have higher numbers `stash@{1}`, `stash@{2}`, etc. |  |
-| `git stash pop` | restore and apply the newest Stash and *clear* it from Stash storage <br> if there are more Stashes, they will move up the list `stash@{1}` is not become the new `stash@{0}` <br>  Stash is not bound to the branch which created it: when restoring it, the changes will be applied to current HEAD branch, whichever this may be. So be sure current working environment is ready for the overlay |  |
-| `git stash apply <stashName>` | restore and apply the specified Stash but it will remain saved on the Stash list <br> `git stash apply stash@{1}`|  |
-| `git stash drop <stashName>` | remove and clear the specified Stash from Stash list <br> `git stash drop stash@{2}` |  |
+| `git stash` | temporarily stash away all local changes to yield a clean working copy <br> Best for: have some local changes not ready to be committed, but need to start working on something else completely different, like an urgent bug fixes |  |
+| `git stash list` | shows all git stash items <br> Stash uses Stack: first/oldest is named `stash@{0}` and increments up `stash@{1}`, `stash@{2}`, etc. <br> However, this number is *not* the same as its stash index |  |
+| `git stash pop` | restore and apply the newest/latest Stash and *clear* it from Stash storage  <br> `stash@{0}`...   (Stack/LIFO) <br> `stash@{1}`... <br> `stash@{2}`... <br> `stash@{3}`... <<< `git stash pop` and removes this one first  <br> Stash is not bound to the branch which creates it: when restoring, the changes will be applied to current HEAD branch, whichever this may be. So be sure current working environment is ready for the overlay |  |
+| `git stash apply stash@{index}` | restore and apply the specified Stash but it will remain saved on the Stash list <br> Stash uses the Stack/LIFO structure - latest stash as index 0 and oldest stash as index 3 (if there were 4 stashes total) <br> `git stash apply stash@{0}` - INDEX 0 for the latest/newest version <br> `git stash apply stash@{3}` - INDEX \<last\> for the oldest/first version (the stash@{0} label)|  |
+| `git stash drop stash@{index}` | remove and clear the specified Stash from Stash list <br> Stash uses the Stack/LIFO structure - latest stash as index 0 and oldest stash as index 3 (if there were 4 stashes total) <br> same as `apply` <br> `git stash drop stash@{0}` - dropping the latest/newest version <br> `git stash drop stash@{3}` - dropping the earliest version - all stash labels move up |  |
+| `git stash clear` | remove all stash versions on Stash list |  |
 | `git restore <path/path/filename.ext>`| discard all changes in working directory revert back to before any changes <br> works well with `git stash apply <>` | |
 | | | |
 | `git log` | shows all the backups created in the repository <br> type 'q' to exit log |  |
