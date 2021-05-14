@@ -10,6 +10,7 @@
 | `git add .` | add all the files that were changed since the last back up or commit to the staging area |  |
 | `git add <fileNameWith.extension>` | add the specified file to staging *before* running `git commit` |  |
 | `git commit -m "..." ` | commits the changes to the local git repository |  |
+| `git commit -a -m "..." ` | add file and commit in single command *when there is not any new file* |  |
 | `git remote add origin https://---.git` | tells git to add a remote repo (origin: GitHub or GitLab or BitBucket) with the provided URL location  <br> `git remote add origin https://github.com/<gitub_Username>/<github_Repo_Name>.git` <br>`git remote add origin https://github.com/geeeedev/sandbox-react.git` |  |
 | | | |
 | `git push` | push the changes to the remote repository from your local repository <br> `git push origin` &nbsp;&nbsp;&nbsp;//origin = GitHub repo  <br> `git push origin master` &nbsp;&nbsp;&nbsp;//master = local repo |  |
