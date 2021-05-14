@@ -27,6 +27,7 @@
 | `git checkout -` | quick switches between last two working branches | [learn more](https://medium.com/@gitship/15-git-hacks-to-save-your-life-as-a-developer-aa8808846dbb) |
 | `git branch` | shows all of your git branches and marks the one you are currently on in green | [learn more](https://www.atlassian.com/git/tutorials/using-branches) |
 | `git merge <branchName>` | merges provided branch name to existing (main) branch - be sure to `checkout` and switch over to the main branch first  | [learn more](https://www.atlassian.com/git/tutorials/using-branches) |
+| `git diff` | view all merge conflicts (when conflict occurs after git merge) <br> type 'q' or 'z' to exit log <br> type 'h' to seek help |  |
 | `git diff --base` | view merge conflicts against the base file |  |
 | `git branch -d <branchName>` | deletes the provided branch name *with safe operation* to prevent deletion when unmerged changes exist |  |
 | `git branch -D <branchName>` | *FORCE* deletes the provided branch name regardless of unmerged changes existence  |  |
