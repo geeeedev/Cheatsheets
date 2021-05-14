@@ -41,6 +41,7 @@
 | `git restore <path/path/filename.ext>`| discard all changes in working directory revert back to before any changes <br> works well with `git stash apply <>` | |
 | | | |
 | `git log` | shows all the backups created in the repository <br> type 'q' to exit log |  |
+| `git log -p` | see only the diff introduced in each commit <br> type 'q' to exit log |  |
 | `git clone <url>` | clones a remote repository from the provided URL to your current local folder directory <br> `git clone https://github.com/geeeedev/chittychat.git` |  |
 | `git fetch` | ... ... ... ??? ??? |  |
 | `git tag`   | ... ... ... ??? ??? |  |
