@@ -21,7 +21,7 @@
 | `npm rum deploy` | `vercel`  | `netlify deploy` <br/>(remember to `npm run build` first)|
 | predeploy (npm run build) will be auto-initiated before deploy (gh-pages -d build)<br>a branch named gh-pages which hosts the deployed app will be created on GitHub<br>homepage property holds the URL for live preview | (follow prompt to login) <br><br> to activate Vercel CLI and <br> initiate Vercel deployment | deploys a Netlify draft/test version from local directory |
 | N/A | Set up and deploy “…current project path…”? Y | What would you like? Create & config a new site |
-|     | Which Scope? geeeedev | - Team? geeeedev’s Team |
+|     | Which Scope? g-dev | - Team? g-dev’s Team |
 |     | Link to existing? N | |
 |     | Proj name? … | Site name? … |
 |     | Directory for code? ./ | Publish directory? ./build |
