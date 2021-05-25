@@ -1,4 +1,4 @@
-## Purpose: Remind myself the differences on Deployment between GitHub Pages, Vercel, and Netlify
+## Purpose: Exploring the differences on Deployment between GitHub Pages, Vercel, and Netlify
 \
 \
 &nbsp;
