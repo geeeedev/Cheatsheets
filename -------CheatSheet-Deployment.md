@@ -19,7 +19,7 @@
 | initialize and upload project to GitHub as usual:<br/> Git init, git add ., git commit -m “…” on project <br/>Create Github repo and git remote add origin to it| N/A | `npm run build`  in project terminal <br> to generate a production build copy |
 | DEPLOY: | | |
 | `npm rum deploy` | `vercel`  | `netlify deploy` <br/>(remember to `npm run build` first)|
-| predeploy (npm run build) will be auto-initiated before deploy (gh-pages -d build)<br>a branch named gh-pages which hosts the deployed app will be created on GitHub<br>homepage property holds the URL for live preview | to activate Vercel CLI and <br> initiate Vercel deployment | deploys a Netlify draft/test version from local directory |
+| predeploy (npm run build) will be auto-initiated before deploy (gh-pages -d build)<br>a branch named gh-pages which hosts the deployed app will be created on GitHub<br>homepage property holds the URL for live preview | (follow prompt to login) <br><br> to activate Vercel CLI and <br> initiate Vercel deployment | deploys a Netlify draft/test version from local directory |
 | N/A | Set up and deploy “…current project path…”? Y | What would you like? Create & config a new site |
 |     | Which Scope? geeeedev | - Team? geeeedev’s Team |
 |     | Link to existing? N | |
@@ -42,6 +42,8 @@
 | run `npm run deploy` again |  | `npm run build`<br> to RE-build a production copy |
 | (will repeat build and deploy process with your new code)<br>(this is separate from commit/push to master - must do both manually to stay synced)<br>`npm run deploy` processes a build copy and post it to the gh-pages branch<br> which is separate from master branch. Live site is spinned off of gh-pages branch. | `vercel`<br> re-deploy to draft site | run again `netlify deploy`<br> re-deploy a draft version from local directory |
 |  | `vercel --prod`<br> manually REDEPLOY to prod site<br> sync draft site to prod site | or run `netlify deploy --prod`<br> bypass draft and build prod version directly |
+|  | `vercel -v` / `vercel --version`<br> check version installed | |
+|  | `vercel -h` / `vercel --help`<br> pull Vercel Commands | |
 |  | | |
 
 \
@@ -51,8 +53,8 @@
 ### Deploy with Vercel (using GitHub private repo - Continuous Integration/Deployment)
 With Continuous Integration/Continuous Deployment:
 - Upload code to a Git repo (like GitHub) and deployment will automatically triggered
-Upload all code on GitHub repo (private or not)
-In Vercel, hook up and specify GitHub repo with Vercel project and deploy from there.
+- Upload all code on GitHub repo (private or not)
+- In Vercel, hook up and specify GitHub repo with Vercel project and deploy from there.
 Since project is hooked up to GitHub repo, Continuous Integration/Deployment will happen when code changes are pushed to GitHub repo
 \
 &nbsp;
