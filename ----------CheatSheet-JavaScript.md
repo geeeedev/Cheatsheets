@@ -701,6 +701,37 @@ console.log(Number.isNaN(parseInt(text)));      //true
   
 &nbsp;  
 &nbsp;  
+### Replace `../../..` with `@/` in JS Import
+---
+> [Trick to Simplify and Speed Up JS Import](https://www.youtube.com/watch?v=fViMRQLWcCo)
+1. create a `jsconfig.json` file at project root - ie., same level as package.json
+2. add code in jsconfig.json to define paths:
+    ```js
+    {
+      "compilerOptions":{
+        "baseUrl":'.',        //define beginning of project/root as "."
+        "paths":{
+          "@/components/*":["./components/*"],    //create references for our absolute paths
+          "@/styles/*":["./styles/*"],
+          "@/lib/*":["./lib/*"],
+          "@/anotherFolder/*":["./anotherFolder/*"]
+        }
+      }
+    }
+    ```
+3. in another js file several folders deep (since it is a bigger scale project) where you need to import from ./components or ./styles
+    ```js
+    //import contactForm from "../../../../components/form";  //instead of doing this way with so many ../
+      import contactForm from "@/components/form";            //can reference @/components/ directly without having 
+                                                              //to remember and count how many folder levels deep I'm in
+    ```
+
+
+
+
+  
+&nbsp;  
+&nbsp;  
 ### topic
 ---
 code example ...
