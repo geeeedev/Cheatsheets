@@ -30,9 +30,15 @@
    
    - Virtual DOM: a virtual representation of the real DOM
       - Everytime the state of our app changes, the virtual DOM gets updated instead of the real DOM.
-      - VDOM is faster and more efficient: When new elements are added to UI, a virtual DOM, represented as a tree, is created.  Each element is a node on this tree.  If the state of any of these elements changes, a new virtual DOM tree is created. The new tree is then compared, "diffed", with the previous virtual DOM tree to calculate the net changes/difference.  The subtree with changes then gets re-rendered to give the updated UI.  This updated tree is then batch updated to the real DOM, ensuring minimal operations on the real DOM, reducing performance cost of updating the real DOM.
+      - VDOM is faster and more efficient: When new elements are added to UI, a virtual DOM, represented as a tree, is created.  Each element is a node on this tree.  
+      - If the state of any of these elements changes, a new virtual DOM tree is created. The new tree is then compared, "diffed", with the previous virtual DOM tree to calculate the net changes/difference.  
+      - The subtree with changes then gets re-rendered to give the updated UI.  This updated tree is then batch updated to the real DOM, ensuring minimal operations on the real DOM, reducing performance cost of updating the real DOM.
 
-   
+- React uses/leverages Virtual DOM
+   - In React, every UI piece is a component, and each component has a state.  
+   - React follows the observable pattern and listens for state changes.  When the state of a component changes, React updates the virtual DOM tree. Once the virtual DOM has been updated, React then compares the current version of the VDOM with the previous version of the VDOM - "diffing".
+   - React then knows which virtual DOM objects have changed, batches these changes together, and updates only those objects in the real DOM. This makes the performance far better when compared to manipulating the real DOM directly.
+   - All the details are abstracted away from React developers.  All you need to do is update the **states** of your components as needed and React takes care of the rest, ensuring a superior developer experience when using React.
 
 
 
