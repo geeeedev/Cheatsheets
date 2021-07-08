@@ -20,8 +20,19 @@
 - Data change are processed manually - no ORM (Cons)
 - Not strongly typed - could cause mystery errors - but there's always TypeScript
 
+### React Features
+- Virtual DOM vs. Real DOM
+   - Real DOM: Document Object Model: UI elements tree of app
+      - Everytime there is a change in the state of app UI, the DOM gets updated to represent that change.
+      - Frequently manipulating the DOM affects performance, ie, slow.
+      - DOM is represented as a tree data structure. After a change, the updated element and it's children have to be **re-rendered** to update the application UI.  
+      - The re-rendering/re-painting of UI is what makes it slow.  Thus, the more UI components there are, the more expensive the DOM updates could be, since they would need to be re-rendered for every DOM update.
+   
+   - Virtual DOM: a virtual representation of the real DOM
+      - Everytime the state of our app changes, the virtual DOM gets updated instead of the real DOM.
+      - VDOM is faster and more efficient: When new elements are added to UI, a virtual DOM, represented as a tree, is created.  Each element is a node on this tree.  If the state of any of these elements changes, a new virtual DOM tree is created. The new tree is then compared, "diffed", with the previous virtual DOM tree to calculate the net changes/difference.  The subtree with changes then gets re-rendered to give the updated UI.  This updated tree is then batch updated to the real DOM, ensuring minimal operations on the real DOM, reducing performance cost of updating the real DOM.
 
-
+   
 
 
 
