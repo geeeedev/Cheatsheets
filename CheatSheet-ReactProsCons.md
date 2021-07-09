@@ -51,6 +51,15 @@
    - React follows a batch update mechanism to update the real DOM.  This means that updates to the real DOM are sent in batches, instead of sending updates for every single change in state.  Hence, leading to increased performance.
    - The repainting of the UI is the most expensive part, and React efficiently ensures that the real DOM receives only batched updtaes to repain the UI.
 
+- Recap - Full Cycle
+   - Frequent DOM manipulations are expensive and performance heavy.
+   - Virtual DOM is a virtual representation of the real DOM.
+   - When state changes occur, the virtual DOM is updated and the previous and current version of virtual DOM is compared. This is called “diffing”.
+   - The virtual DOM then sends a batch update to the real DOM to update the UI.
+   - React uses virtual DOM to enhance its performance.
+   - It uses the observable to listen and detect state and prop changes.
+   - React uses an efficient diff algorithm to compare the versions of virtual DOM.
+   - It then makes sure that batched updates are sent to the real DOM for repainting or re-rendering of the UI.
 
 
 
