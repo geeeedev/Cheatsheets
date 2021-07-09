@@ -40,6 +40,18 @@
    - React then knows which virtual DOM objects have changed, batches these changes together, and updates only those objects in the real DOM. This makes the performance far better when compared to manipulating the real DOM directly.
    - All the details are abstracted away from React developers.  All you need to do is update the **states** of your components as needed and React takes care of the rest, ensuring a superior developer experience when using React.
 
+- React render() function
+   - render() is where the UI gets updated and rendered. 
+   - render() is the required lifecycle method in React.
+   - render() is the point of entry where the tree of React elements are created.
+   - When a state or prop within the component is updated, the render() will return a different tree of React elements.  If you use setState() within the component, React immediately detects the state change and re-renders the component.
+   - This is when React updates its virtual DOM first, then performs diffing to batch changes.
+
+- Batch Update mechanism
+   - React follows a batch update mechanism to update the real DOM.  This means that updates to the real DOM are sent in batches, instead of sending updates for every single change in state.  Hence, leading to increased performance.
+   - The repainting of the UI is the most expensive part, and React efficiently ensures that the real DOM receives only batched updtaes to repain the UI.
+
+
 
 
 
