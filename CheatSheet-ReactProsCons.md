@@ -69,6 +69,16 @@
          - Update - Growth of React component
          - Unmount - Death of React component
 
+   - Common Lifecycle Methods 
+      - render() 
+         - most used lifecycle method, used in all React classes.
+         - the only required method within a class component in React.
+         - handles the rendering of components to the UI
+         - happens during the mounting and updating events of components
+         - render() returns JSX that is displayed in the UI.
+         - render() could also return a null if there is nothing to render for that component.
+
+
 
 
 
