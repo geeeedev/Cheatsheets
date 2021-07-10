@@ -1,6 +1,7 @@
 ## Purpose: React Knowledge Review - Pros and Cons
 
 > To review an older version of React (if I run into older React code), follow [this](https://www.w3schools.com/react/react_render.asp)
+> 
 
 ### React Pros & Cons
 - Virtual DOM
@@ -20,7 +21,7 @@
 - Data change are processed manually - no ORM (Cons)
 - Not strongly typed - could cause mystery errors - but there's always TypeScript
 
-### React & Virtual DOM
+### [React & Virtual DOM](https://programmingwithmosh.com/react/react-virtual-dom-explained/)
 - Virtual DOM vs. Real DOM
    - Real DOM: Document Object Model: UI elements tree of app
       - Everytime there is a change in the state of app UI, the DOM gets updated to represent that change.
@@ -61,22 +62,39 @@
    - React uses an efficient diff algorithm to compare the versions of virtual DOM.
    - It then makes sure that batched updates are sent to the real DOM for repainting or re-rendering of the UI.
 
-### React Lifecycle
-   - React Lifecycle methods
+### [React Lifecycle](https://programmingwithmosh.com/javascript/react-lifecycle-methods/) 
+   - React Lifecycle Events
       - the series of events that happen from the birth of a React component to its death.
       - Every component in React goes through a lifecycle of events.
-         - Mounting - Birth of React component
-         - Update - Growth of React component
-         - Unmount - Death of React component
+         - Mounting Event - Birth of React component
+         - Update Event - Growth of React component
+         - Unmount Event - Death of React component
 
-   - Common Lifecycle Methods 
+   - React Lifecycle Methods 
       - render() 
+         ```js
+         class Hello extends Component{
+            render(){
+               return <div>Hello {this.props.name}</div>
+            }
+         }
+
+         const Hello = () => {
+            //state
+            //logic
+            return (
+               <div>Hello {props.name}</div>
+            )
+         }
+         ```
          - most used lifecycle method, used in all React classes.
-         - the only required method within a class component in React.
+         - the only **required** method within a class component in React.
          - handles the rendering of components to the UI
-         - happens during the mounting and updating events of components
-         - render() returns JSX that is displayed in the UI.
-         - render() could also return a null if there is nothing to render for that component.
+         - happens during the **mounting** and **updating** events of components
+         - returns JSX that is displayed in the UI.
+         - could also return a null if there is nothing to render for that component.
+         - method must be pure - no side-effects
+         - must always return the same output when the same inputs are passed, ie, no setState()/no modifying the component state within a render()
 
 
 
