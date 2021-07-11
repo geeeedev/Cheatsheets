@@ -3,7 +3,7 @@
 > To review an older version of React (if I run into older React code), follow [this](https://www.w3schools.com/react/react_render.asp)
 > 
 
-### React Pros & Cons
+## React Pros & Cons
 - Virtual DOM
    - high performance JavaScript library 
    - React observes (follows the observable pattern) and listens for state changes, then update the Virtual DOM, diffing the changes with previous VDOM, then batch update only those changed objects in the real DOM.  
@@ -21,7 +21,7 @@
 - Data change are processed manually - no ORM (Cons)
 - Not strongly typed - could cause mystery errors - but there's always TypeScript
 
-### [React & Virtual DOM](https://programmingwithmosh.com/react/react-virtual-dom-explained/)
+## [React & Virtual DOM](https://programmingwithmosh.com/react/react-virtual-dom-explained/)
 - Virtual DOM vs. Real DOM
    - Real DOM: Document Object Model: UI elements tree of app
       - Everytime there is a change in the state of app UI, the DOM gets updated to represent that change.
@@ -62,7 +62,7 @@
    - React uses an efficient diff algorithm to compare the versions of virtual DOM.
    - It then makes sure that batched updates are sent to the real DOM for repainting or re-rendering of the UI.
 
-### [React Lifecycle](https://programmingwithmosh.com/javascript/react-lifecycle-methods/) 
+## [React Lifecycle](https://programmingwithmosh.com/javascript/react-lifecycle-methods/) 
 - React Lifecycle Events
    - the series of events that happen from the birth of a React component to its death.
    - Every component in React goes through a lifecycle of events.
@@ -131,6 +131,8 @@
       }
       ```
 
+![](Screenshots/ReactComponentLifecycle.png)
+
 - React Lifecycle Methods (UnCommon)
    - shouldComponentUpdate()
       - always return a boolean value responding to question "Should the componenet be re-rendered?"
@@ -153,6 +155,7 @@
       - exits only for rare use cases where the state depends on changes in props in a component
       - is fired/executed on every render
       - example use case: a <Transition> component that compares its previous and next children to decide which ones to animate in and out
+      - safer alternative to componentWillReceiveProps()
       ```js
          static getDerivedStateFromProps(props, state) {
             if (props.currentRow !== state.lastRow) {
@@ -165,7 +168,6 @@
             return null;
          }
       ```
-      - safer alternative to componentWillReceiveProps()
 
    - getSnapshotBeforeUpdate()
       - called right before the DOM is updated
