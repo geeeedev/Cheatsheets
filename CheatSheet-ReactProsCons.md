@@ -70,7 +70,7 @@
          - Update Event - Growth of React component
          - Unmount Event - Death of React component
 
-   - React Lifecycle Methods 
+   - React Lifecycle Methods (Common)
       - render() 
          ```js
          class Hello extends Component{
@@ -81,7 +81,7 @@
 
          const Hello = () => {
             //state
-            //logic
+            //logic to modify state
             return (
                <div>Hello {props.name}</div>
             )
@@ -93,11 +93,46 @@
          - happens during the **mounting** and **updating** events of components
          - returns JSX that is displayed in the UI.
          - could also return a null if there is nothing to render for that component.
-         - method must be pure - no side-effects
+         - method must be pure and simple - no side-effects
          - must always return the same output when the same inputs are passed, ie, no setState()/no modifying the component state within a render()
+         - state modification should happen in other lifecycle methods, keeping render() pure
 
+      - componentDidMount()
+         - called as soon as the component has been moutned and ready
+         - good place to initiate API calls, load data from a remote endpoint
+         - allows modifying state using setState()
+         - will update state and cause another rendering but will happen before the browser updates the UI, ensure that user will not see any UI updates with double rendering
+         - best practice to ensure states are assigned in the constructor()
+         - best to setState() for special cases like tooltips, modals, etc. when you would need to measure a DOM node before rendering something that depends on its position
+         - use this pattern with caution to avoid unwanted performance issues
 
+      - componentDidUpdate()
+         - invoked as soon as UI updating happens
+         - most common use case is updating the DOM in response to prop or state changes
+         - can call setState() in this lifecycle event, must wrap it in a condition to check for state or prop changes from previous state
+         - incorrect usage of setState() will lead to an infinite loop
+         ```js
+         componentDidUpdate(prevProps) {
+            //Typical usage, don't forget to compare the props
+            if (this.props.userName !== prevProps.userName) {  //userName has been updated
+               this.fetchData(this.props.userName);            //fetchData with updated userName; no need to make the API call if props.userName did not change
+            }
+         }
+         ```
 
+      - componentWillUnmount()
+         - called just before the component is unmounted and destroyed.
+         - good place for any cleanup actions
+         - common cleanup activities include clearing timers, cancelling API calls, clearing any caches in storage
+         - canNOT modify the component state here, no setState() allowed, changes will never be re-rendered 
+         ```js
+         componentWillUnmount() {
+            window.removeEventListener('resize', this.resizeListener)
+         }
+         ```
+
+   - React Lifecycle Methods (UnCommon)
+      - 
 
 
 
