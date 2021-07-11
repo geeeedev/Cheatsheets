@@ -52,7 +52,7 @@
    - React follows a batch update mechanism to update the real DOM.  This means that updates to the real DOM are sent in batches, instead of sending updates for every single change in state.  Hence, leading to increased performance.
    - The repainting of the UI is the most expensive part, and React efficiently ensures that the real DOM receives only batched updtaes to repain the UI.
 
-- Recap - Full Cycle
+- Recap - Virtual to Real
    - Frequent DOM manipulations are expensive and performance heavy.
    - Virtual DOM is a virtual representation of the real DOM.
    - When state changes occur, the virtual DOM is updated and the previous and current version of virtual DOM is compared. This is called “diffing”.
@@ -63,115 +63,144 @@
    - It then makes sure that batched updates are sent to the real DOM for repainting or re-rendering of the UI.
 
 ### [React Lifecycle](https://programmingwithmosh.com/javascript/react-lifecycle-methods/) 
-   - React Lifecycle Events
-      - the series of events that happen from the birth of a React component to its death.
-      - Every component in React goes through a lifecycle of events.
-         - Mounting Event - Birth of React component
-         - Update Event - Growth of React component
-         - Unmount Event - Death of React component
+- React Lifecycle Events
+   - the series of events that happen from the birth of a React component to its death.
+   - Every component in React goes through a lifecycle of events.
+      - Mounting Event - Birth of React component
+      - Update Event - Growth of React component
+      - Unmount Event - Death of React component
 
-   - React Lifecycle Methods (Common)
-      - render() 
-         ```js
-         class Hello extends Component{
-            render(){
-               return <div>Hello {this.props.name}</div>
-            }
+- React Lifecycle Methods (Common)
+   - render() 
+      ```js
+      class Hello extends Component{
+         render(){
+            return <div>Hello {this.props.name}</div>
          }
+      }
 
-         const Hello = () => {
-            //state
-            //logic to modify state
-            return (
-               <div>Hello {props.name}</div>
-            )
+      const Hello = () => {
+         //state
+         //logic to modify state
+         return (
+            <div>Hello {props.name}</div>
+         )
+      }
+      ```
+      - most used lifecycle method, used in all React classes.
+      - the only **required** method within a class component in React.
+      - handles the rendering of components to the UI
+      - happens during the **mounting** and **updating** events of components
+      - returns JSX that is displayed in the UI.
+      - could also return a null if there is nothing to render for that component.
+      - method must be pure and simple - no side-effects
+      - must always return the same output when the same inputs are passed, ie, no setState()/no modifying the component state within a render()
+      - state modification should happen in other lifecycle methods, keeping render() pure
+
+   - componentDidMount()
+      - called as soon as the component has been moutned and ready
+      - good place to initiate API calls, load data from a remote endpoint
+      - allows modifying state using setState()
+      - will update state and cause another rendering but will happen before the browser updates the UI, ensure that user will not see any UI updates with double rendering
+      - best practice to ensure states are assigned in the constructor()
+      - best to setState() for special cases like tooltips, modals, etc. when you would need to measure a DOM node before rendering something that depends on its position
+      - use this pattern with caution to avoid unwanted performance issues
+
+   - componentDidUpdate()
+      - invoked as soon as UI updating happens
+      - most common use case is updating the DOM in response to prop or state changes
+      - can call setState() in this lifecycle event, must wrap it in a condition to check for state or prop changes from previous state
+      - incorrect usage of setState() will lead to an infinite loop
+      ```js
+      componentDidUpdate(prevProps) {
+         //Typical usage, don't forget to compare the props
+         if (this.props.userName !== prevProps.userName) {  //userName has been updated
+            this.fetchData(this.props.userName);            //fetchData with updated userName; no need to make the API call if props.userName did not change
          }
-         ```
-         - most used lifecycle method, used in all React classes.
-         - the only **required** method within a class component in React.
-         - handles the rendering of components to the UI
-         - happens during the **mounting** and **updating** events of components
-         - returns JSX that is displayed in the UI.
-         - could also return a null if there is nothing to render for that component.
-         - method must be pure and simple - no side-effects
-         - must always return the same output when the same inputs are passed, ie, no setState()/no modifying the component state within a render()
-         - state modification should happen in other lifecycle methods, keeping render() pure
+      }
+      ```
 
-      - componentDidMount()
-         - called as soon as the component has been moutned and ready
-         - good place to initiate API calls, load data from a remote endpoint
-         - allows modifying state using setState()
-         - will update state and cause another rendering but will happen before the browser updates the UI, ensure that user will not see any UI updates with double rendering
-         - best practice to ensure states are assigned in the constructor()
-         - best to setState() for special cases like tooltips, modals, etc. when you would need to measure a DOM node before rendering something that depends on its position
-         - use this pattern with caution to avoid unwanted performance issues
+   - componentWillUnmount()
+      - called just before the component is unmounted and destroyed.
+      - good place for any cleanup actions
+      - common cleanup activities include clearing timers, cancelling API calls, clearing any caches in storage
+      - canNOT modify the component state here, no setState() allowed, changes will never be re-rendered 
+      ```js
+      componentWillUnmount() {
+         window.removeEventListener('resize', this.resizeListener)
+      }
+      ```
 
-      - componentDidUpdate()
-         - invoked as soon as UI updating happens
-         - most common use case is updating the DOM in response to prop or state changes
-         - can call setState() in this lifecycle event, must wrap it in a condition to check for state or prop changes from previous state
-         - incorrect usage of setState() will lead to an infinite loop
-         ```js
-         componentDidUpdate(prevProps) {
-            //Typical usage, don't forget to compare the props
-            if (this.props.userName !== prevProps.userName) {  //userName has been updated
-               this.fetchData(this.props.userName);            //fetchData with updated userName; no need to make the API call if props.userName did not change
-            }
+- React Lifecycle Methods (UnCommon)
+   - shouldComponentUpdate()
+      - always return a boolean value responding to question "Should the componenet be re-rendered?"
+      - handy when don't want React to render if state or prop has no changes because component re-renders by default anytime setState() **is called**
+      - exists only for performance optimizations
+      - must not update component state here
+      - be cautious to not rely on it to prevent rendering of your component
+      ```js
+         shouldComponentUpdate(nextProps, nextState) {
+            return this.props.title !== nextProps.title || 
+            this.state.input !== nextState.input 
          }
-         ```
+      ```
 
-      - componentWillUnmount()
-         - called just before the component is unmounted and destroyed.
-         - good place for any cleanup actions
-         - common cleanup activities include clearing timers, cancelling API calls, clearing any caches in storage
-         - canNOT modify the component state here, no setState() allowed, changes will never be re-rendered 
-         ```js
-         componentWillUnmount() {
-            window.removeEventListener('resize', this.resizeListener)
+   - static getDerivedStateFromProps()
+      - called just before calling the render()
+      - this is a static function that does NOT have access to "this." 
+      - returns **an object to update state** in response to prop changes.
+      - can return a null if there is no change to state
+      - exits only for rare use cases where the state depends on changes in props in a component
+      - is fired/executed on every render
+      - example use case: a <Transition> component that compares its previous and next children to decide which ones to animate in and out
+      ```js
+         static getDerivedStateFromProps(props, state) {
+            if (props.currentRow !== state.lastRow) {
+               return {
+                  isScrollingDown: props.currentRow > state.lastRow,
+                  lastRow: props.currentRow,
+               };
+            }
+            // Return null to indicate no change to state.
+            return null;
          }
-         ```
+      ```
+      - safer alternative to componentWillReceiveProps()
 
-   - React Lifecycle Methods (UnCommon)
-      - shouldComponentUpdate()
-         - always return a boolean value responding to question "Should the componenet be re-rendered?"
-         - handy when don't want React to render if state or prop has no changes because component re-renders by default anytime setState() **is called**
-         - exists only for performance optimizations
-         - must not update component state here
-         - be cautious to not rely on it to prevent rendering of your component
-         ```js
-            shouldComponentUpdate(nextProps, nextState) {
-               return this.props.title !== nextProps.title || 
-               this.state.input !== nextState.input 
-            }
-         ```
+   - getSnapshotBeforeUpdate()
+      - called right before the DOM is updated
+      - value returned is passed on to componentDidUpdate()
+      - should be used rarely or not used at all
+      - example use case: resizing the window durnig an async rendering
+      - safer alternative to componentWillUpdate()
 
-      - static getDerivedStateFromProps()
-         - called just before calling the render()
-         - this is a static function that does NOT have access to "this." 
-         - returns **an object to update state** in response to prop changes.
-         - can return a null if there is no change to state
-         - exits only for rare use cases where the state depends on changes in props in a component
-         - is fired/executed on every render
-         - example use case: a <Transition> component that compares its previous and next children to decide which ones to animate in and out
-         ```js
-            static getDerivedStateFromProps(props, state) {
-               if (props.currentRow !== state.lastRow) {
-                  return {
-                     isScrollingDown: props.currentRow > state.lastRow,
-                     lastRow: props.currentRow,
-                  };
-               }
-               // Return null to indicate no change to state.
-               return null;
-            }
-         ```
-         - safer alternative to componentWillReceiveProps()
+![](Screenshots/ReactComponentLifecycle.png)
 
+- Recap - Lifecycle Events and Method
 
+   - React component lifecycle has three events – Mounting, Updating and Unmounting.
 
+   - The render() is the most used lifecycle method.
+      - It is a pure function.
+      - You cannot set state in render()
 
+   - The componentDidMount() happens as soon as your component is mounted.
+      - You can set state here but with caution.
 
+   - The componentDidUpdate() happens as soon as the updating happens.
+      - You can set state here but with caution.
 
+   - The componentWillUnmount() happens just before the component unmounts and is destroyed.
+      - This is a good place to cleanup all the data.
+      - You cannot set state here.
+
+   - The shouldComponentUpdate() can be used rarely.
+      - It can be called if you need to tell React not to re-render for a certain state or prop change.
+      - This needs to be used with caution only for certain performance optimizations.
+
+   - The two new lifecycle methods are getDerivedStateFromProps() and getSnapshotBeforeUpdate().
+      - They need to be used only occasionally.
+      - Should research for more examples to see how to properly implement them
 
 
 
