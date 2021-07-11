@@ -132,7 +132,43 @@
          ```
 
    - React Lifecycle Methods (UnCommon)
-      - 
+      - shouldComponentUpdate()
+         - always return a boolean value responding to question "Should the componenet be re-rendered?"
+         - handy when don't want React to render if state or prop has no changes because component re-renders by default anytime setState() **is called**
+         - exists only for performance optimizations
+         - must not update component state here
+         - be cautious to not rely on it to prevent rendering of your component
+         ```js
+            shouldComponentUpdate(nextProps, nextState) {
+               return this.props.title !== nextProps.title || 
+               this.state.input !== nextState.input 
+            }
+         ```
+
+      - static getDerivedStateFromProps()
+         - called just before calling the render()
+         - this is a static function that does NOT have access to "this." 
+         - returns **an object to update state** in response to prop changes.
+         - can return a null if there is no change to state
+         - exits only for rare use cases where the state depends on changes in props in a component
+         - is fired/executed on every render
+         - example use case: a <Transition> component that compares its previous and next children to decide which ones to animate in and out
+         ```js
+            static getDerivedStateFromProps(props, state) {
+               if (props.currentRow !== state.lastRow) {
+                  return {
+                     isScrollingDown: props.currentRow > state.lastRow,
+                     lastRow: props.currentRow,
+                  };
+               }
+               // Return null to indicate no change to state.
+               return null;
+            }
+         ```
+         - safer alternative to componentWillReceiveProps()
+
+
+
 
 
 
