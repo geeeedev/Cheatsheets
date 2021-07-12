@@ -10,6 +10,7 @@
    - makes rendering efficient - fast display of a great number of components
 - Component driven/Component based architecture 
    - makes it easy to divide-and-conquer, and greatly improves reusability
+   - multiple components can be composed together to make complex applications without losing their state in DOM
 - Light-weight, flexible, and UN-opinionated (Pros)
    - not a lot of structure or scaffolding developers have to straightly follow 
    - make it easy to use, fast to learn (just JS), and can be creative with it
