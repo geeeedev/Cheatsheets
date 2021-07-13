@@ -13,13 +13,22 @@
    - multiple components can be composed together to make complex 
    applications without losing their state in DOM
    - makes highly scaled Single Page App (SPA), in which content is dynamicaly loaded during user interaction without loading the entire page
+- Redux in React
+   - serves as a "manager" who manages data, provides a single source of truth for data ensuring all components are in synce with latest correct data
+   - foces components to avoid talking to each other directly or dependent on each other
+   - components send their data to redux; it is the responsibility of redux to update the components with new data
+   - With Redux, components are always updated with the latest data available without having to depend on each other
+- Easy to Learn
+   - React uses most of what JS is already available, making it very easy to start
 - Light-weight, flexible, and UN-opinionated (Pros)
+   - does not force any specific pattern like MVC or architecture pattern
    - not a lot of structure or scaffolding developers have to straightly follow 
    - make it easy to use, fast to learn (just JS), and can be creative with it
 - being UN-opinionated could also be a Cons 
    - since it doesn't come with a structure or certain features like a framework would, will require more coding to get things done -eg. having to include Reach/Route for routing in React vs. routing is already part of the structure in C#.Net Core 
    - but I also think this is where the creativity and control come in - we can built on however we want it or apply third party npm
 - SEO-friendly
+
 - View-only (Cons)
 - Data change are processed manually - no ORM (Cons)
 - Not strongly typed - could cause mystery errors - but there's always TypeScript
