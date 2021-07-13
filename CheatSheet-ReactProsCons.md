@@ -8,39 +8,50 @@
    - high performance JavaScript library 
    - React observes (follows the observable pattern) and listens for state changes, then update the Virtual DOM, diffing the changes with previous VDOM, then batch update only those changed objects in the real DOM.  
    - makes rendering efficient - fast display of a great number of components
+   
 - Component driven/Component based architecture 
    - makes it easy to divide-and-conquer, and greatly improves reusability
    - multiple components can be composed together to make complex 
    applications without losing their state in DOM
    - makes highly scaled Single Page App (SPA), in which content is dynamicaly loaded during user interaction without loading the entire page
+
 - Redux in React
    - serves as a "manager" who manages data, provides a single source of truth for data ensuring all components are in synce with latest correct data
    - foces components to avoid talking to each other directly or dependent on each other
    - components send their data to redux; it is the responsibility of redux to update the components with new data
    - With Redux, components are always updated with the latest data available without having to depend on each other
+
 - Flexible, Light-weight, and UN-opinionated (Pros)
    - does not force developers to follow any specific architecture pattern like MVC.  Development teams are free to choose their own style or patterns
    - not a lot of structure or scaffolding developers have to straightly follow 
    - no new pattern means less new terminologies, make it fast to learn (just JS), easy to use, and can be creative with it
    - React uses most of what JS is already available, making it very easy to start
    - allows vanilla JS developers to work with component-based architecture without having to lose the freeedom of vanilla JS
-- being UN-opinionated could also be a Cons - Lack of Conventions/Standard
+
+- being UN-opinionated could also be a **Cons** - Lack of Conventions/Standard (Cons)
    - Libraries and frameworks have global standards of what styles or patterns devs should follow. Without that standards, it is not easy for newcomers to predict what styles or standards React development teams follow
    - since it doesn't come with a structure or certain features like a framework would, will require more coding to get things done -eg. having to include additional libraries nad tools, such as Reach/Route for routing in React vs. routing is already part of the structure in C#.Net Core 
    - but I also think this is where the creativity and control come in - we can built on however we want it or apply third party npm
+
 - SEO-friendly
    - due to Virtual DOM and component-based
+
 - Mobile App Development
    - the flexibility of using the same library over web and mobile 
    applications
    - React Native allows us to create mobile applications on any mobile platform with the same React concepts and syntaxes, without having to learn a new tool or language
 
-- High Pace of Development
-   - Rapidly grown and changing, forcing developers to update the way they code
+- High Pace of Development (Cons)
+   - With React being rapidly growing and changing, forcing developers to update the way they code
    - cannot be easily adopted by applications where changes are critical to customers
-- View-only (Cons)
+
+- View-only/Not full-featured framework  (Cons)
    - echoes the Un-opinionated Cons. Compare to MVC, React only handles the view part.  For Controller and Model, additional libraries and tools would be needed, which could result in poor structore of code
-   (whereas frameworks like Angular provide the complete MVD featured ground which is more structured and well managed.)
+   (whereas frameworks like Angular provide the complete MVC featured ground which is more structured and well managed.)
+   - might require deeper understanding of JS and its core behavior to make React work the way we want it.  Whereas with frameworks like Angular (although it is more difficult to learn than React) force developers to follow a strict structure where you enjoy similar patterns as backend development
+
+- Difficult to Maintain Documentation
+   - React's rapid growth and changes make it difficult for the community to maintain documentation, making it challenging for new developers
 - Data change are processed manually - no ORM (Cons)
 - Not strongly typed - could cause mystery errors - but there's always TypeScript
 
