@@ -8,7 +8,7 @@
    - high performance JavaScript library 
    - React observes (follows the observable pattern) and listens for state changes, then update the Virtual DOM, diffing the changes with previous VDOM, then batch update only those changed objects in the real DOM.  
    - makes rendering efficient - fast display of a great number of components
-   
+
 - Component driven/Component based architecture 
    - makes it easy to divide-and-conquer, and greatly improves reusability
    - multiple components can be composed together to make complex 
@@ -55,13 +55,17 @@
 - Data change are processed manually - no ORM (Cons)
 - Not strongly typed - could cause mystery errors - but there's always TypeScript
 
+- Developers' Perspective (Pros)
+- Business Owners' Perspective (Pros)
+
+
 ## [React & Virtual DOM](https://programmingwithmosh.com/react/react-virtual-dom-explained/)
 - Virtual DOM vs. Real DOM
    - Real DOM: Document Object Model: UI elements tree of app
       - Everytime there is a change in the state of app UI, the DOM gets updated to represent that change.
       - Frequently manipulating the DOM affects performance, ie, slow.
       - DOM is represented as a tree data structure. After a change, the updated element and it's children have to be **re-rendered** to update the application UI.  
-      - The re-rendering/re-painting of UI is what makes it slow.  Thus, the more UI components there are, the more expensive the DOM updates could be, since they would need to be re-rendered for every DOM update.
+      - The re-rendering/re-painting of UI is the most costly part of the process and is what makes performance slow.  Thus, the more UI components there are, the more expensive the DOM updates could be, since they would need to be re-rendered for EVERY DOM update.
    
    - Virtual DOM: a virtual representation of the real DOM
       - Everytime the state of our app changes, the virtual DOM gets updated instead of the real DOM.
