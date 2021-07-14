@@ -3,7 +3,7 @@
 > To review an older version of React (if I run into older React code), follow [this](https://www.w3schools.com/react/react_render.asp)
 > 
 
-## React Pros & Cons
+## [React Pros & Cons](https://www.knowledgehut.com/blog/web-development/pros-and-cons-of-react)
 - Virtual DOM
    - high performance JavaScript library 
    - React observes (follows the observable pattern) and listens for state changes, then update the Virtual DOM, diffing the changes with previous VDOM, then batch update only those changed objects in the real DOM.  
@@ -78,6 +78,7 @@
    - React follows the observable pattern and listens for state changes.  When the state of a component changes, React updates the virtual DOM tree. Once the virtual DOM has been updated, React then compares the current version of the VDOM with the previous version of the VDOM - "diffing".
    - React then knows which virtual DOM objects have changed, batches these changes together, and updates only those objects in the real DOM. This makes the performance far better when compared to manipulating the real DOM directly.
    - All the details are abstracted away from React developers.  All you need to do is update the **states** of your components as needed and React takes care of the rest, ensuring a superior developer experience when using React.
+   - React efficiently manages the most costly processing of re-rendering UIs by running batch updates to re-render UI 
 
 - React render() function
    - render() is where the UI gets updated and rendered. 
@@ -245,4 +246,23 @@
 
 
 
+- [Code Splitter in React](https://www.geeksforgeeks.org/code-splitting-in-react/)
+   - supported by bundlers like Webpack, Rollup, Browserify
+   - Webpack, Rollup, Browserify, etc. create multiple bundles that can be dynamically loaded at runtime
+   - Code Splitter is a method that helps to generate bundles that are able to run dynamically, making code efficient because the bundle contains all required imports and files.
+   - Bundling is the method of combining imported files with a single file.
+   - With code splitting, "lazy loading" can be implemented, which means just using/loading the code which is needed at that time.
+   ```js
+   //Default Importing (no code splitting)
+   import { add } from './math';
 
+   console.log(add(x, y));
+   ```
+   ```js
+   //Importing with code splitting
+   import("./math").then(math => {
+      console.log(math.add(x, y));
+      });
+   ```
+   - As soon as [Webpack](https://webpack.js.org/guides/code-splitting/) gets this type of syntax, code-splitting is started automatically.
+   - In Create-React-App, it is already set up and can be used immediately.
