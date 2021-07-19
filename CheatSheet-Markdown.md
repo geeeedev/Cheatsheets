@@ -79,6 +79,7 @@ but without space after \\
 | :--- | :---: | ---: |
 | afdsjfadksjflkadsjflkjdsalfjdsjfadsfadsfa | fadsfdsafdsafdsafdsafasfadsfdsafdsafas | fasdfdsafdsafadsffadsfadsfasdfasdfasdasdf |
 | use html \<br> tag for<br> multiple lines<br>inside a cell | asdfasdfdsfds | fdsfdsafdsfasd |
+| | | |
 \
 \
 &nbsp;
