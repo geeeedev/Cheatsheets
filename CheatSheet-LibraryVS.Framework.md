@@ -13,3 +13,17 @@
 | | |
 
 
+| ReactJS | NextJS |
+| :--- | :--- |
+| JS library that builds UI using components as building blocks | JS framework with a set of libraries that work together to build a web app, with one of the libraries being ReactJS |
+| does **one part** of all the web app - build UI components to show content | builds all parts of the web app |
+| | Other libraries used by NextJS: |
+| | next/router: for routing and navigation |
+| | next/link: a component that allows web app to link pages and allows lazy loading data |
+| | next/image: a component to load images into the pages in the most performant way |
+| ReactJS as a library is part of a framework, the UI components part | NextJS as a framework allows you to use ReactJS library to build UI components and pages for a web app. |
+| | |
+
+
+![](./Screenshots/React-vs-Next.jpg)
+<!-- ![](Screenshots/React-vs-Next.jpg) samd as above -->
