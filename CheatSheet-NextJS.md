@@ -22,7 +22,7 @@
 - Visit `http://localhost:3000` to view application in development server
 
 
-### `/Pages`
+### [`/Pages`](https://nextjs.org/docs/basic-features/pages)
 - Next.js is built around the concept of pages.  
 - A page is a React Component exported from a .js, .jsx, .ts, or .tsx file in the `pages` directory
 - Each page is associated with a route based on the filename. `pages/about.js` maps to `/about`
@@ -42,4 +42,38 @@
 - Next.js lets us **choose** which pre-rendering we'd like to use for **each** page.  Can create a "hybrid" Next.js app by using SSG for most pages and SSR for a couple.
 - SSG is better than SSR performance wise: Statically generated pages can be cached by CDN with no extra configuration to boost performance.  
 - Can also use Client-side Rendering along with SSG or SSR.  That means some parts of a page can be rendered entirely by client side JS
+
+#### Static Generation WITHOUT data
+- By default, Next.js pre-renders pages using SSG without fetching data.
+
+#### Static Generation WITH data
+- Page **content** depends on external data: Use `getStaticProps()`
+    - Eg. page needs to fetch the list of blog posts from a CMS.
+    - To fetch data on pre-render, `export` an `async` function called `getStaticProps()` from the same file.  This function gets called at build time and passes fetched data to the page's `props` on pre-render.
+    ```js
+    //Need posts (by calling some API endpoints) before this component is pre-rendered
+    function Blog({posts}){
+        return (
+            <ul>
+                {posts.map((post) => (
+                    <li>{post.title}</li>
+                ))}
+            </ul>
+        )
+    }
+    //This gets called at build time
+    //Fetch posts by calling external API endpoint
+    //Returning { props: {posts} }, Blog component will receive posts as a prop at build time
+    export async function getStaticProps(){
+        const res = await fetch(`http://.../posts`);
+        const posts = await res.json();
+
+        return {
+            props: {
+                posts,
+            }
+        }
+    }
+    export default Blog;
+    ```
 
