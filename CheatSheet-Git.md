@@ -2,6 +2,11 @@
 
 &nbsp;
 &nbsp;
+> Submit a pull request: requesting the official repo owner to "pull" changes from my own repo, approving my work.  
+> A pull request is a method of submitting contributions to an open development project.  A pull request occurs when a developer asks for changes committed to an external repo to be considered for inclusion in a project's main repo.   
+
+&nbsp;
+&nbsp;
 
 ### Git Commands
 | Commands | Meaning | Resources |
