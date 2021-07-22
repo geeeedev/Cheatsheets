@@ -3,12 +3,13 @@
 &nbsp;
 &nbsp;
 > Submit a pull request: requesting the official repo owner to "pull" changes from my own repo, approving my work.  
-> A pull request is a method of submitting contributions to an open development project.  A pull request occurs when a developer asks for changes committed to an external repo to be considered for inclusion in a project's main repo.   
+> A pull request is a method of submitting contributions to an open development project.  A pull request occurs when a developer asks for changes committed to an external repo to be considered for inclusion in a project's main repo.  
+
 
 &nbsp;
 &nbsp;
 
-### Git Commands
+### [Git Commands](http://guides.beanstalkapp.com/version-control/common-git-commands.html)
 | Commands | Meaning | Resources |
 | :--- | :--- | :---: |
 | `git init`  | initialize a local git repository | 
@@ -74,5 +75,6 @@
 
 ![](./Screenshots/git-Config.png)  
 
-> [See more helpful shortcuts](https://medium.com/@gitship/15-git-hacks-to-save-your-life-as-a-developer-aa8808846dbb)
+> [See more helpful shortcuts](https://medium.com/@gitship/15-git-hacks-to-save-your-life-as-a-developer-aa8808846dbb)  
+> [See More Command Examples](http://guides.beanstalkapp.com/version-control/common-git-commands.html)
 
