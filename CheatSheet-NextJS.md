@@ -44,13 +44,15 @@
 - Can also use Client-side Rendering along with SSG or SSR.  That means some parts of a page can be rendered entirely by client side JS
 
 #### Static Generation WITHOUT data
-- By default, Next.js pre-renders pages using SSG without fetching data.
+- By default, Next.js pre-renders pages using SSG without fetching data - just HTML elements.
 
 #### Static Generation WITH data
 - Page **content** depends on external data: Use `getStaticProps()`
     - Eg. page needs to fetch the list of blog posts from a CMS.
-    - To fetch data on pre-render, `export` an `async` function called `getStaticProps()` from the same file.  This function gets called at build time and passes fetched data to the page's `props` on pre-render.
+    - To fetch data on pre-render, `export` an `async` function called `getStaticProps()` from the same file.  
+    - This function gets called at build time and passes fetched data to the page's `props` on pre-render.
     ```js
+    //pages/posts.js
     //Need posts (by calling some API endpoints) before this component is pre-rendered
     function Blog({posts}){
         return (
@@ -77,3 +79,49 @@
     export default Blog;
     ```
 
+- Page **paths** depend on external data: Use `getStaticPaths()` usually in addition to `getStaticProps()`
+    - For pages with dynamic routes, what data to pre-render at build time depends on external feed
+    - Eg. page with `pages/posts/[id].js` to show a single blog post based on id.
+    - To fetch data for page **paths** on pre-render, `export` an `async` function called `getStaticPaths()` from a dynamically routed page `pages/posts/[id].js`.  
+    - This function gets called at build time and (lets you specify which paths you want to pre-render???) (compile all the paths available???)
+    ```js
+    //pages/posts/[id].js
+    function Post({ post }) {
+        // Render 1 post...
+    }
+
+    // This function gets called at build time
+    export async function getStaticPaths() {
+        // Call an external API endpoint to get posts
+        const res = await fetch('https://.../posts')
+        const posts = await res.json()
+
+        // Get the paths we want to pre-render based on posts
+        const paths = posts.map((post) => ({
+            params: { id: post.id },
+        }))
+        /**paths = 
+        [ 
+            { params: { id: '1' } },
+            { params: { id: '2' } },
+            { params: { id: '3' } }
+        ]*/
+
+        // We'll pre-render only these paths at build time.
+        // { fallback: false } means other routes should 404.
+        return { paths, fallback: false }
+    }
+
+    // This also gets called at build time
+    export async function getStaticProps({ params }) {
+        // params contains the post `id`.
+        // If the route is like /posts/1, then params.id is 1
+        const res = await fetch(`https://.../posts/${params.id}`)
+        const post = await res.json()
+
+        // Pass post data to the page via props
+        return { props: { post } }
+    }
+
+    export default Post
+    ```
