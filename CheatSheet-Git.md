@@ -1,10 +1,20 @@
-## Purpose: Remind myself of the Useful Git Commands
+## Purpose: Remind myself of Git Concepts & Commands
 
 &nbsp;
 &nbsp;
-> Submit a pull request: requesting the official repo owner to "pull" changes from my own repo, approving my work.  
-> A pull request is a method of submitting contributions to an open development project.  A pull request occurs when a developer asks for changes committed to an external repo to be considered for inclusion in a project's main repo.  
 
+### Open Source Project Contribution Concepts
+| | |
+| :--- | :--- |
+| [Steps to Contribute](https://tharis63.medium.com/git-fork-vs-git-clone-8aad0c0e38c0) | 1. Fork the original repository to your own repository <br> 2. Clone it to your local <br> 3. Make changes; contribute to it <br> 4. Push it to your remote repo forked copy <br> 5. Send a PR to the main repo from your forked merged GitHub copy <br> 6. If the owner of the repo is okay with your contribution they will merge your changes with the original repository.  <br> |
+| [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) | Make a copy of the **main** project remote repo to **my own remote** (GitHub) repo <br> Forking is done on the GitHub Account while Cloning is done using Git. Forked copy remains on my GitHub account <br> Click the *Fork* button on GitHub |
+| [Clone](https://www.toolsqa.com/git/difference-between-git-clone-and-git-fork/) | Bring the forked project **from my own remote** (GitHub) repo to my local environment in order to make changes, then push changes back to my own remote repo (forked copy on GitHub) <br> Forking is done on the GitHub Account while Cloning is done using Git.  Cloned copy is brought to my local machine with the help of Git <br> Click the *Clone or download* button on GitHub to get the .git link.  <br> Use `git clone https://... .git` command in git bash to clone copy to local <br> ( Note: If I cloned a project I do not own down to my local machine, made changes and then pushed it up to the original remote repo (I do not own), I will get a 403 Unable To Access Permission error ) |
+| Branch | Make a branch in the local copy if needed  <br> Make changes to contribute |
+| Push | Push changes back to my forked GitHub copy to update it with my new changes <br> `git add modifiedFile.ext` <br> `git commit -m "Comments"` <br> `git push origin master` |
+| Pull Request | Submit a pull request: requesting the official repo owner to "pull" changes from my own repo, approving my work.  <br> A pull request is a method of submitting contributions to an open development project.  A pull request occurs when a developer asks for changes committed to an external repo to be considered for inclusion in a project's main repo. <br> Pull request should be done from the forked and merged remote (GitHub) copy |
+| | |  
+
+![](./Screenshots/ForknClone.png)
 
 &nbsp;
 &nbsp;
