@@ -37,11 +37,16 @@
 
 #### Two Forms of Pre-rendering
 - Difference is in **WHEN** it generates the HTML for a page
-- Static Generation (SSG): The HTML page is generated at **build time** when you run `next build` or `npm build` and will be reused on each request. Can be cached by CDN.
-- Server-Side Rendering (SSR): The HTML is generated on each request.
-- Next.js lets us **choose** which pre-rendering we'd like to use for **each** page.  Can create a "hybrid" Next.js app by using SSG for most pages and SSR for a couple.
-- SSG is better than SSR performance wise: Statically generated pages can be cached by CDN with no extra configuration to boost performance.  
+- Static Generation (SSG): The HTML page is generated at **build time** when you run `next build` or `npm build` and will be reused on each request. Can be cached by CDN
+- Server-Side Rendering (SSR): The HTML is generated on each request
+- Next.js lets us **choose** which pre-rendering we'd like to use for **each** page.  Can create a "hybrid" Next.js app by using SSG for most pages and SSR for a couple
+- SSG is better than SSR performance wise: Statically generated pages can be cached by CDN with no extra configuration to boost performance
 - Can also use Client-side Rendering along with SSG or SSR.  That means some parts of a page can be rendered entirely by client side JS
+- SSG (with and without data) is recommended whenever possible since page can be built once and served by CDN, which makes it much faster than having a server render the page on every request
+- SSG for many types of pages: Marketing pages, blog posts, e-commerce product listings, Help and documentation, etc.
+- If you can pre-render a page ahead of users' request, SSG should be used.
+- If a page shows frequently updated data, or its content changes on every request, SSR should be used, or do SSG with Client-side Rendering (skip pre-rendering some parts of a page and then use client-side JS to populate them)
+
 
 #### Static Generation WITHOUT data
 - By default, Next.js pre-renders pages using SSG without fetching data - just HTML elements.
@@ -125,3 +130,5 @@
 
     export default Post
     ```
+
+#### Server-Side Rendering (aka Dynamic Rendering)
