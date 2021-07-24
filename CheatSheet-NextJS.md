@@ -84,7 +84,7 @@
     export default Blog;
     ```
 
-- Page **paths** depend on external data: Use `getStaticPaths()` usually in addition to `getStaticProps()`
+- Page **paths** depend on external data: Use `getStaticPaths()` which then feeds into `getStaticProps()`
     - For pages with dynamic routes, what data to pre-render at build time depends on external feed
     - Eg. page with `pages/posts/[id].js` to show a single blog post based on id.
     - To fetch data for page **paths** on pre-render, `export` an `async` function called `getStaticPaths()` from a dynamically routed page `pages/posts/[id].js`.  
@@ -132,3 +132,24 @@
     ```
 
 #### Server-Side Rendering (aka Dynamic Rendering)
+- Remember in SSR, the HTML page is generated on **each request**
+- need to `export` an `async` function `getServerSideProps()` which will be called by the server on every request
+- Eg. A page needs to pre-render frequently updated data (fetched from an external API).  We can write `getServerSideProps()` which fetches this data and passes it to `Page`
+- `getServerSideProps()` is similar to `getStaticProps()`; the difference is that `getServerSideProps()` is run on every request instead of on build time.
+```js
+function Page({ data }) {
+  // Render data...
+}
+
+// This gets called on every request
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch(`https://.../data`)
+  const data = await res.json()
+
+  // Pass data to the page via props
+  return { props: { data } }
+}
+
+export default Page
+```
