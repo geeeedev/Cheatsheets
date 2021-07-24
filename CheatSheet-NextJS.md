@@ -164,3 +164,12 @@ export default Page
 
 #### Global Stylesheet
 - To add a stylesheet to your application, import the CSS file within `pages/_app.js`.
+```js
+//pages/_app.js
+import '../styles.css'
+
+// This default export is required in a new `pages/_app.js` file.
+export default function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+```
