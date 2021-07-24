@@ -153,3 +153,14 @@ export async function getServerSideProps() {
 
 export default Page
 ```
+
+### Data Fetch
+
+
+
+
+### Built-In CSS Support
+- Next.js allows the import of CSS files
+
+#### Global Stylesheet
+- To add a stylesheet to your application, import the CSS file within `pages/_app.js`.
