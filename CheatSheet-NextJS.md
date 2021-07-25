@@ -133,26 +133,26 @@
 
 #### Server-Side Rendering (aka Dynamic Rendering)
 - Remember in SSR, the HTML page is generated on **each request**
-- need to `export` an `async` function `getServerSideProps()` which will be called by the server on every request
+- Need to `export` an `async` function `getServerSideProps()` which will be called by the server on every request
 - Eg. A page needs to pre-render frequently updated data (fetched from an external API).  We can write `getServerSideProps()` which fetches this data and passes it to `Page`
 - `getServerSideProps()` is similar to `getStaticProps()`; the difference is that `getServerSideProps()` is run on every request instead of on build time.
-```js
-function Page({ data }) {
-  // Render data...
-}
+    ```js
+    function Page({ data }) {
+    // Render data...
+    }
 
-// This gets called on every request
-export async function getServerSideProps() {
-  // Fetch data from external API
-  const res = await fetch(`https://.../data`)
-  const data = await res.json()
+    // This gets called on every request
+    export async function getServerSideProps() {
+    // Fetch data from external API
+    const res = await fetch(`https://.../data`)
+    const data = await res.json()
 
-  // Pass data to the page via props
-  return { props: { data } }
-}
+    // Pass data to the page via props
+    return { props: { data } }
+    }
 
-export default Page
-```
+    export default Page
+    ```
 
 ### Data Fetch
 
@@ -164,12 +164,12 @@ export default Page
 
 #### Global Stylesheet
 - To add a stylesheet to your application, import the CSS file within `pages/_app.js`.
-```js
-//pages/_app.js
-import '../styles.css'
+    ```js
+    //pages/_app.js
+    import '../styles.css'
 
-// This default export is required in a new `pages/_app.js` file.
-export default function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
-```
+    // This default export is required in a new `pages/_app.js` file.
+    export default function MyApp({ Component, pageProps }) {
+    return <Component {...pageProps} />
+    }
+    ```
