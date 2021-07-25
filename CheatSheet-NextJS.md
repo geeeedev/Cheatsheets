@@ -173,3 +173,7 @@
     return <Component {...pageProps} />
     }
     ```
+- These imported styles will apply to all pages and componenets in the application.
+- Due to the global nature of stylesheets, and to avoid conflicts, stylesheets must only be imported inside `pages/_app.js`
+- In development, stylesheet imported inside _app.js allows styles to be hot reloaded as the page is being editted, keeping application state
+- In production, all CSS files will be automatically concatenated into a single minified `.css` file
