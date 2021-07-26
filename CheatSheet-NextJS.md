@@ -177,3 +177,15 @@
 - Due to the global nature of stylesheets, and to avoid conflicts, stylesheets must only be imported inside `pages/_app.js`
 - In development, stylesheet imported inside _app.js allows styles to be hot reloaded as the page is being editted, keeping application state
 - In production, all CSS files will be automatically concatenated into a single minified `.css` file
+
+#### Import styles from `node_modules`
+- Importing css files from `node_modules` is permitted anywhere in application (from Next.js 9.5.4 on)
+- For global stylesheets `bootstrap` or `nprogress`, import its css file inside `pages/_app.js`
+    ```js
+    // pages/_app.js
+    import 'bootstrap/dist/css/bootstrap.css'
+
+    export default function MyApp({ Component, pageProps }) {
+    return <Component {...pageProps} />
+    }
+    ```
