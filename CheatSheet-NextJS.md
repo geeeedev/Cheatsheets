@@ -176,11 +176,12 @@
                         params: { id: ... },
                     }
                     ```
-            - `preview` 
-            - `locale`
-            - `locales`
-            - `defaultLocale`
-    
+            - `preview` key == `true` if page is in the preview mode, otherwise == `undefined`
+                - See [Preview Mode](https://nextjs.org/docs/advanced-features/preview-mode)
+            - `locale` key contains the active locale if enabled
+            - `locales` key contains all supported locales if enabled
+            - `defaultLocale` key contains the configured default locale if enabled
+
     - returns a `props` object
 
 
