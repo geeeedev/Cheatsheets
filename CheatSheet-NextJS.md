@@ -164,7 +164,7 @@
         }
     }
     ```
-    - `context`
+    - `getStaticProps()` can expect `context` as parameter
         - The context param is an **object** containing the following **keys**:
             - `params` key contains the route parameters for pages using dynamic routes
                 - if the page name is `[id].js` then `params` key would have { id: ... }
@@ -182,7 +182,26 @@
             - `locales` key contains all supported locales if enabled
             - `defaultLocale` key contains the configured default locale if enabled
 
-    - returns a `props` object
+    - `getStaticProps()` should return an object with:
+        - `props`: an optional object with the props that will be received by the page component; it should be a serializable object
+        - `revalidate`: an optional amount in seconds after which a page re-generation can occur; defaults to `false` or no revalidating
+        - `notFound`: an optional boolean value to allow the page to return a 404 status and page.
+            ```js
+            export async function getStaticProps(context) {
+                const res = await fetch(`https://.../data`)
+                const data = await res.json()
+
+                if (!data) {
+                    return {
+                        notFound: true,
+                    }
+                }
+
+                return {
+                    props: { data }, // will be passed to the page component as props
+                }
+            }
+            ```
 
 
 
