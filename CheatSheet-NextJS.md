@@ -154,7 +154,37 @@
     export default Page
     ```
 
-### Data Fetch
+### Data Fetch - Dive Deep
+- `getStaticProps()`
+    - Exporting an async function `getStaticProps()` and Next.js will pre-render this page at build time using the props returned by `getStaticProps()`
+    ```js
+    export async function getStaticProps(context) {
+        return {
+            props: {}, // will be passed to the page component as props object
+        }
+    }
+    ```
+    - `context`
+        - The context param is an **object** containing the following **keys**:
+            - `params` key contains the route parameters for pages using dynamic routes
+                - if the page name is `[id].js` then `params` key would have { id: ... }
+                - use this together with `getStaticPaths()`
+                - see [Dynamic Routing](https://nextjs.org/docs/routing/dynamic-routes) 
+                    ```js
+                    //context object would look like:
+                    { 
+                        params: { id: ... },
+                    }
+                    ```
+            - `preview` 
+            - `locale`
+            - `locales`
+            - `defaultLocale`
+    
+    - returns a `props` object
+
+
+
 
 
 
