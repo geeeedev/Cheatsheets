@@ -202,6 +202,11 @@
                 }
             }
             ```
+        > `notFound` is not needed for `fallback: false` mode as only paths returned from `getStaticPaths` will be pre-rendered.  
+
+        > With `notFound: true` the page will return a 404 even if there was a successfully generated page before. This is meant to support use-cases like user generated content getting removed by its author.   
+
+       
 
 
 
