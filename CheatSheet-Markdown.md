@@ -1,11 +1,23 @@
 # The ones I tend to forget easily
 
+## Reference to other section
+[Reference for Italic & Bold](#italic-and-bold)  
+[Reference for Link an URL](#link-an-url)  
+[Reference for link a relative file](#link-a-relative-file)
+- Reference must be in format `(#title-in-lower-case-with-hyphen)`
+- No special character is allowed in (#reference) e.g. `&` or `:` or ` ` space
+- any level of heading (#-######) is allowed
+- Special character at beginning or ending of heading title is allowed and ignored
+\
+&nbsp;
+
+
 ## strike through with tilda:
 ~~crossing over a line of text~~
 \
 &nbsp;
 
-## italic & bold:
+## Italic And Bold:
  *\* for Italic Only \**  
  **\*\* for Bold Only \*\***  
  ***\*\*\* for Italic and Bold \*\*\****  
@@ -16,7 +28,7 @@
 \
 &nbsp;
 
-## link an URL:
+## Link An URL:
 [Handling Events](https://reactjs.org/docs/handling-events.html)
 \
 &nbsp;
@@ -92,6 +104,9 @@ but without space after \\
 \
 \
 &nbsp;
+
+
+
 
 ## Other header continues here
 
