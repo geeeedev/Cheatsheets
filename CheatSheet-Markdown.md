@@ -3,11 +3,12 @@
 ## Reference to other section
 [Reference for Italic & Bold](#italic-and-bold)  
 [Reference for Link an URL](#link-an-url)  
-[Reference for link a relative file](#link-a-relative-file)
+[Reference for link a relative file](#link-a-relative-file)  
+[Reference for build a table](#build-a-table)
 - Reference must be in format `(#title-in-lower-case-with-hyphen)`
 - No special character is allowed in (#reference) e.g. `&` or `:` or ` ` space
 - any level of heading (#-######) is allowed
-- Special character at beginning or ending of heading title is allowed and ignored
+- Special character at beginning and ending of heading title is allowed and ignored
 \
 &nbsp;
 
