@@ -29,7 +29,7 @@ To run my PY Django project, first ensure below steps in order:
 
     To create new Python Virtual Env with name `vePy3` or `veDjango`, first arrive at the folder directory that will house the PY Virtual Environment (vEnv):
     ```python
-    python3 -m venv  vePy3
+    python3 -m venv  vePy3      # -m means module
     python3 -m venv  veDjango
     ```
 
@@ -73,11 +73,15 @@ To run my PY Django project, first ensure below steps in order:
 
     - Python
 
-        Access [Python website](https://www.python.org) and install the macOS version 
+        Access [Python website](https://www.python.org) and install the macOS version  
+        [Python Commands](https://docs.python.org/3/using/cmdline.html)
 
     - pip
 
-        (included with by default Python installation)
+        (included with Python installation by default )  
+        ```python
+        python3 -m pip install --upgrade pip    # to upgrade pip3  ( -m means module )
+        ```
     
     - Django
 
