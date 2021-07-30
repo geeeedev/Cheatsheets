@@ -30,6 +30,22 @@ eval "$(pyenv init --path)"
 ```
 
 
+### Rebuild .bash_profile (To Remove Duplicates)
+- enter in Terminal:
+```bash
+echo '' > ~/.bash_profile
+echo '# Setting PATH for Python 3.8' >> ~/.bash_profile
+echo '# The original version is saved in .bash_profile.pysave' >> ~/.bash_profile
+echo 'PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"' >> ~/.bash_profile
+echo 'export PATH' >> ~/.bash_profile
+echo 'export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"' >> ~/.bash_profile
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
+echo 'eval "$(pyenv init --path)"' >> ~/.bash_profile
+```
+
+
+
 
 
 
