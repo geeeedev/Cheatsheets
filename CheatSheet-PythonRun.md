@@ -12,7 +12,7 @@ To run my PY Django project, first ensure below steps in order:
     * ensure that Django is installed
     ``` python
     ImportError(
-                "Couldn't import Django. Are you sure it's installed and "
+                "Couldn't import Django. Are you sure it's installed and "  
                 "available on your PYTHONPATH environment variable? Did you "
                 "forget to activate a virtual environment?"
             ) from exc
@@ -23,6 +23,7 @@ To run my PY Django project, first ensure below steps in order:
 ## Virtual Environment
 1. The `venv` module starting from Python 3.3 provides support for creating lightweight "virtual environments" with their own directoies, optionally isolated from system site directories.  
 2. Each vEnv has its own Python binary (matches the version of the binary that was used to create this vEnv) and can have its own independent set of installed python packages in its site directories.  
+> [`venv` - Creation of Virtual Environments](https://docs.python.org/3/library/venv.html)
 
 - create
 
