@@ -21,6 +21,8 @@ To run my PY Django project, first ensure below steps in order:
 
 
 ## Virtual Environment
+1. The `venv` module starting from Python 3.3 provides support for creating lightweight "virtual environments" with their own directoies, optionally isolated from system site directories.  
+2. Each vEnv has its own Python binary (matches the version of the binary that was used to create this vEnv) and can have its own independent set of installed python packages in its site directories.  
 
 - create
 
