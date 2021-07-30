@@ -14,6 +14,24 @@ env == lists all the environment variables
 ...  
 ...  
 
+### Existing .bash_profile content example
+```terminal
+Gwennies-MacBook-Pro:~ gwennielau$ cat ~/.bash_profile -->
+                                                        # an actual blank line in file
+# Setting PATH for Python 3.8  
+# The original version is saved in .bash_profile.pysave  
+PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"  
+export PATH  
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"  
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"      # rebuild to remove this line
+export PYENV_ROOT="$HOME/.pyenv"  
+export PATH="$PYENV_ROOT/bin:$PATH"  
+eval "$(pyenv init --path)"  
+```
+
+
+
+
 
 
 
