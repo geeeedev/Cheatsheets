@@ -241,7 +241,14 @@
 
     - NOTE: should not use `fetch()` to call an [internal-???] API route in `getStaticProps()`. Instead, should directly import the logic needed/used inside the API route [like import into the component-???].  Might need to refactor code for this approach.  Fetching from an external API is perfectly fine!
 
+    - NOTE: should use `getStaticProps()` if:
+        - data to render the page is available at build time ahead of a user's request
+        - data comes from a headless CMS
+        - data can be publicly cached (not user-specific)
+        - page must be pre-rendered (for SEO) and be very fast - `getStaticProps()`generates HTML and JSON files, oth can be cached by a CDN for performance.  
+
     
+
 
 
 
