@@ -247,7 +247,8 @@
         - data can be publicly cached (not user-specific)
         - page must be pre-rendered (for SEO) and be very fast - `getStaticProps()`generates HTML and JSON files, oth can be cached by a CDN for performance.  
 
-   
+    > [Pay Attention to the ***Technical Details*** listed](https://nextjs.org/docs/basic-features/data-fetching#technical-details)  
+    
     > Important Points:  
     > Does `getStaticProps()` replace `useEffect()`?  
     > - No - two different things/functions!
@@ -261,7 +262,10 @@
     However useEffect runs on the client-side. The purpose of useEffect, to get data before components mount, so you can use that data inside the component.
     ```
 
-    
+    &nbsp;  
+    > [See `getStaticProps()` usage ***with TypeScript***](https://nextjs.org/docs/basic-features/data-fetching#typescript-use-getstaticprops)
+
+
 
 
 
