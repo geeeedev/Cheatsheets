@@ -247,9 +247,21 @@
         - data can be publicly cached (not user-specific)
         - page must be pre-rendered (for SEO) and be very fast - `getStaticProps()`generates HTML and JSON files, oth can be cached by a CDN for performance.  
 
+   
+    > Important Points:  
+    > Does `getStaticProps()` replace `useEffect()`?  
+    > - No - two different things/functions!
+    > - `useEffect()` is used to execute code ***when component is mounted on client side***, and ***when specific variables > change.***  
+    >  - `getStaticProps()` is run ***only ONCE on server side and at build time.***  
+    >  - And if trying to run `useEffect()` inside `getStaticProps()` will cause below error. `useEffect()`, as with all react hooks, is supposed to be inside/at-top-level-of the component function, not within any other functions.
+    >     > Error: Invalid hook call. Hooks can only be called inside of the body of a function component.
+    ```
+    in next.js data is fetched on the server. This is the key aspect of server side rendering. The main purpose of server-side rendering, is sending populated page, so browser crawlers can analyze the response page and this help better seo for your page. When client makes a request, before sending the response, next.js runs getStaticProps or getServerSideProps.
+
+    However useEffect runs on the client-side. The purpose of useEffect, to get data before components mount, so you can use that data inside the component.
+    ```
+
     
-
-
 
 
 
