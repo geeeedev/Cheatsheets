@@ -1,7 +1,7 @@
 ## Purpose: Remind myself how to get started with Next.js
 
 [NextJS Start](https://nextjs.org/docs/getting-started)  
-[NextJS API](https://nextjs.org/docs/api-reference/create-next-app)
+[NextJS API](https://nextjs.org/docs/api-reference/create-next-app)  
 
 - Start a next.js app  
     `npx create-next-app app-name-no-capital-letters`  
@@ -130,6 +130,8 @@
 
     export default Post
     ```
+    - > ***QUESTION***: the part I don't totally get is the outcome of paths variable -  paths should be an array with a **list** of params obj of ids one for each post.  
+    How does getStaticProps handle this **list** of params?  If it were meant to be just one specific id params, then how come I do not see a filter in getStaticPaths() to return just one param obj with id?
 
 #### Server-Side Rendering (aka Dynamic Rendering)
 - Remember in SSR, the HTML page is generated on **each request**
@@ -143,12 +145,12 @@
 
     // This gets called on every request
     export async function getServerSideProps() {
-    // Fetch data from external API
-    const res = await fetch(`https://.../data`)
-    const data = await res.json()
+        // Fetch data from external API
+        const res = await fetch(`https://.../data`)
+        const data = await res.json()
 
-    // Pass data to the page via props
-    return { props: { data } }
+        // Pass data to the page via props
+        return { props: { data } }
     }
 
     export default Page
@@ -206,7 +208,6 @@
 
         > With `notFound: true` the page will return a 404 even if there was a successfully generated page before. This is meant to support use-cases like user generated content getting removed by its author.   
 
-       
 
 
 
