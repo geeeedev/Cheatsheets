@@ -166,28 +166,36 @@
         }
     }
     ```
-    - `getStaticProps()` can expect `context` as parameter
+    - Context Input: `getStaticProps()` can expect `context` as parameter
         - The context param is an **object** containing the following **keys**:
             - `params` key contains the route parameters for pages using dynamic routes
                 - if the page name is `[id].js` then `params` key would have { id: ... }
                 - use this together with `getStaticPaths()`
                 - see [Dynamic Routing](https://nextjs.org/docs/routing/dynamic-routes) 
                     ```js
-                    //context object would look like:
+                    //context object would look like: 
                     { 
                         params: { id: ... },
+                        preview: undefined,
+                        locale: '',
+                        locales: [],
+                        defaultLocale: ''
                     }
                     ```
             - `preview` key == `true` if page is in the preview mode, otherwise == `undefined`
                 - See [Preview Mode](https://nextjs.org/docs/advanced-features/preview-mode)
             - `locale` key contains the active locale if enabled
             - `locales` key contains all supported locales if enabled
-            - `defaultLocale` key contains the configured default locale if enabled
+            - `defaultLocale` key contains the configured default locale if enabled  
+            &nbsp;
 
-    - `getStaticProps()` should return an object with:
-        - `props`: an optional object with the props that will be received by the page component; it should be a serializable object
+    - Object Output: `getStaticProps()` should return an object with:
+        - `props` (obj): an optional object with the props that will be received by the page component; it should be a serializable object
         - `revalidate`: an optional amount in seconds after which a page re-generation can occur; defaults to `false` or no revalidating
         - `notFound`: an optional boolean value to allow the page to return a 404 status and page.
+            > With `notFound: true` the page will return a 404 even if there was a successfully generated page before. This is meant to support use-cases like user generated content getting removed by its author.  
+
+            > `notFound` is not needed for `fallback: false` mode in `getStaticPaths()` as only paths returned from `getStaticPaths()` will be pre-rendered.  
             ```js
             export async function getStaticProps(context) {
                 const res = await fetch(`https://.../data`)
@@ -204,9 +212,30 @@
                 }
             }
             ```
-        > `notFound` is not needed for `fallback: false` mode as only paths returned from `getStaticPaths` will be pre-rendered.  
+        - `redirect` (obj): an optional redirect value to allow redirecting to internal and external resources; should match the format of `{ destination: string, permanent: boolean }` 
+            > If for rare cases need to assign a custom status code (e.g. for older HTTP Clients to properly redirect), can use the `statusCode` property instead of the `permanent` property, but not both.
 
-        > With `notFound: true` the page will return a 404 even if there was a successfully generated page before. This is meant to support use-cases like user generated content getting removed by its author.   
+            > Redirecting at build-time is currently not allowed and if the redirects are known at build-time they should be added in `next.config.js`  
+            ***Question***: Not sure I get this part because getStaticProps() IS run at build time.  Or is it just saying the redirect needs to be an object to be passed elsewhere like the example format and not a redirect action???
+            ```js
+            export async function getStaticProps(context) {
+                const res = await fetch(`https://...`)
+                const data = await res.json()
+
+                if (!data) {
+                    return {
+                        redirect: {
+                            destination: '/',
+                            permanent: false,   // statusCode: 123,
+                        },
+                    }
+                }
+
+                return {
+                    props: { data },            // will be passed to the page component as props
+                }
+            }
+            ```
 
 
 
