@@ -237,8 +237,11 @@
             }
             ```
 
+    - NOTE: can import modules in top-level scope for use in `getStaticProps()`.  Imports used in `getStaticProps()` will not be bundled for the client-side.  This means you can write server-side code directly in `getStaticProps()` including reading from the filesystem or a database.
 
+    - NOTE: should not use `fetch()` to call an [internal-???] API route in `getStaticProps()`. Instead, should directly import the logic needed/used inside the API route [like import into the component-???].  Might need to refactor code for this approach.  Fetching from an external API is perfectly fine!
 
+    
 
 
 
