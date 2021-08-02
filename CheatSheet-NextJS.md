@@ -268,7 +268,20 @@
     > [Read more on `getStaticProps()` usage ***with TypeScript***](https://nextjs.org/docs/basic-features/data-fetching#typescript-use-getstaticprops)
 
 
+## Data Fetch - Dive Deep - [getStaticPaths()](https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation)
+- `getStaticPaths()`
+-
+-
+-
 
+
+## Data Fetch - Dive Deep - [getServerSideProps()](https://nextjs.org/docs/basic-features/data-fetching#getserversideprops-server-side-rendering)
+- `getServerSideProps()`
+-
+-
+-
+-
+-
 
 
 
