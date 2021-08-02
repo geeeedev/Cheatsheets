@@ -247,7 +247,12 @@
         - data can be publicly cached (not user-specific)
         - page must be pre-rendered (for SEO) and be very fast - `getStaticProps()`generates HTML and JSON files, oth can be cached by a CDN for performance.  
 
-    
+    ### [Pay Attention to the ***Technical Details*** of `getStaticProps()` ](https://nextjs.org/docs/basic-features/data-fetching#technical-details)  
+    - Only runs at build time
+        - `getStaticProps()` runs only at build time, it does NOT receive data that's only avail during request time (query param or HTTP headers)
+
+
+    &nbsp;  &nbsp;  
     > Important Points:  
     > Does `getStaticProps()` replace `useEffect()`?  
     > - No - two different things/functions!
