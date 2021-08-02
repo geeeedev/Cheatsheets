@@ -156,7 +156,7 @@
     export default Page
     ```
 
-### Data Fetch - Dive Deep
+## Data Fetch - Dive Deep - [getStaticProps()](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation)
 - `getStaticProps()`
     - Exporting an async function `getStaticProps()` and Next.js will pre-render this page at build time using the props returned by `getStaticProps()`
     ```js
@@ -247,7 +247,6 @@
         - data can be publicly cached (not user-specific)
         - page must be pre-rendered (for SEO) and be very fast - `getStaticProps()`generates HTML and JSON files, oth can be cached by a CDN for performance.  
 
-    > [Pay Attention to the ***Technical Details*** listed](https://nextjs.org/docs/basic-features/data-fetching#technical-details)  
     
     > Important Points:  
     > Does `getStaticProps()` replace `useEffect()`?  
@@ -263,14 +262,20 @@
     ```
 
     &nbsp;  
-    > [See `getStaticProps()` usage ***with TypeScript***](https://nextjs.org/docs/basic-features/data-fetching#typescript-use-getstaticprops)
+    > [Read more on Incremental Static Regeneration](https://nextjs.org/docs/basic-features/data-fetching#incremental-static-regeneration)
+
+    &nbsp;  
+    > [Read more on `getStaticProps()` usage ***with TypeScript***](https://nextjs.org/docs/basic-features/data-fetching#typescript-use-getstaticprops)
 
 
 
 
 
 
-### Built-In CSS Support
+
+
+&nbsp;  &nbsp;  
+## Built-In CSS Support
 - Next.js allows the import of CSS files
 
 #### Global Stylesheet
