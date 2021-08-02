@@ -250,8 +250,12 @@
     ### [Pay Attention to the ***Technical Details*** of `getStaticProps()` ](https://nextjs.org/docs/basic-features/data-fetching#technical-details)  
     - Only runs at build time
         - `getStaticProps()` runs only at build time, it does NOT receive data that's only avail during request time (query param or HTTP headers)
-
-
+    - Write server-side code directly
+        - `getStaticProps()` runs only on the server-side 
+        - It will never be run on the client-side.
+        - It wont be included in the JS bundle for the browser (no exposure security risk)
+            - ie, you can write server-side code directly in `getStaticProps()` such as direct database queries without them being sent to browsers
+    
     &nbsp;  &nbsp;  
     > Important Points:  
     > Does `getStaticProps()` replace `useEffect()`?  
