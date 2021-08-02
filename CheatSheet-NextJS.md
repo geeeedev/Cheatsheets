@@ -255,6 +255,10 @@
         - It will never be run on the client-side.
         - It wont be included in the JS bundle for the browser (no exposure security risk)
             - ie, you can write server-side code directly in `getStaticProps()` such as direct database queries without them being sent to browsers
+    - Statically generates both HTML *and JSON*
+        - JSON file holding the result of running `getStaticProps()`
+        - JSON file will be used in client-side routing through `next/link` or `next/router`
+        - ... [read important details here](https://nextjs.org/docs/basic-features/data-fetching#statically-generates-both-html-and-json)
     
     &nbsp;  &nbsp;  
     > Important Points:  
