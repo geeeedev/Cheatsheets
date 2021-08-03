@@ -263,7 +263,10 @@
         - `getStaticProps()` can only be exported from a **page**. 
         - cannot export it from a non-page files 
             - restriction reason: React needs to have all the required data before the page is rendered
-    
+        - MUST use `export async function getStaticProps() {}`
+            - it will not work if you add `getStaticProps()` as a property of the page component.
+    - Runs on every request in development
+        - in development (`next dev`), `getStaticProps()` will be called on every request
 
     &nbsp;  &nbsp;  
     > Important Points:  
