@@ -259,7 +259,12 @@
         - JSON file holding the result of running `getStaticProps()`
         - JSON file will be used in client-side routing through `next/link` or `next/router`
         - ... [read important details here](https://nextjs.org/docs/basic-features/data-fetching#statically-generates-both-html-and-json)
+    - Only allowed in a page
+        - `getStaticProps()` can only be exported from a **page**. 
+        - cannot export it from a non-page files 
+            - restriction reason: React needs to have all the required data before the page is rendered
     
+
     &nbsp;  &nbsp;  
     > Important Points:  
     > Does `getStaticProps()` replace `useEffect()`?  
