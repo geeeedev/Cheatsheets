@@ -96,27 +96,28 @@ which node                           //should give current location of node: usr
 - set up a React.js app
 
   ```js
-  npx create-react-app client          //`client` is the folder directory containing this react-app
+  npx create-react-app client           //`client` is the frontend directory/folder name containing this react-app 
   ```
 
 - initialize a npm package, such as `react-app` (installed by npx)
 
   ```js
-  npm init react-app client            //same as `npx create-react-app client`
+  npm init react-app client             //same as `npx create-react-app client`
   npm init react-app ./my-react-app
-  npm init foo                         //same as `npx create-foo`
-  npm init @usr/foo                    //same as `npx @usr/create-foo`
+  npm init foo                          //same as `npx create-foo`
+  npm init @usr/foo                     //same as `npx @usr/create-foo`
   ```
 
 - start up a legacy Node/npm project with just pacakge.json file created (bare bone)
   ```js
-  npm init -y         // without haivng it ask questions
+  npm init -y                           // without haivng it ask questions
   ```
 
 ## Executing app:
 
 - Run React app (in separate console)
   ```bash
+  cd client           // dont forget to cd into the client dir 
   npm start   OR   npm run start
   ```
 
