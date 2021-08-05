@@ -90,6 +90,7 @@ which node                           //should give current location of node: usr
 - install all dependencies listed in the package.json file within a project
 
   ```js
+  //cd client       //for frontend setup with client folder - need to do the same for backend server's package.json as well
   npm install
   ```
 
