@@ -96,6 +96,7 @@ which node                           //should give current location of node: usr
 - set up a React.js app
 
   ```js
+  npx create-react-app app-name         // create a new react app in the `app-name` name directory folder
   npx create-react-app client           //`client` is the frontend directory/folder name containing this react-app 
   ```
 
