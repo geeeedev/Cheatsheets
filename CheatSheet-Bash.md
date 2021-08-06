@@ -2,25 +2,23 @@
 
 [15 Useful Bash Shell Built-in Commands (With Examples)](https://www.thegeekstuff.com/2010/08/bash-shell-builtin-commands/)
 
-cat == print or output [filepath] content in Terminal 
-\~/ == \$Home == Users/gwennielau  
-echo == print  
-\> [filepath] == print to [filepath], overwrite existing content  
-\>> [filepath] == print to [filepath], continue after existing content  
-source [filepath] == reads and executes commands from [filepath] specified as its argument in the current shell environment. It is useful to load functions, variables, and configuration files into shell scripts.
-eval [command] == execute [command]  
-export [var] == export [variable-or-function] to the environment of all the child processes running in the current shell  
-env == lists all the environment variables  
+`cat ~/.bash_profile` == print or output file `.bash_profile` content from filepath `~/.bash_profile` in Terminal  
+`~/` == $Home == Users/gwennielau  
+`echo` == print  
+`\> [filepath]` == print to [filepath], overwrite existing content  
+`\>> [filepath]` == print to [filepath], continue after existing content  
+`source [filepath]` == reads and executes commands from [filepath] specified as its argument in the current shell environment. It is useful to load functions, variables, and configuration files into shell scripts.  
+
 ...  
 ...  
-...  
+
 > Restart your login session for the changes to take effect.  
     - In MacOS, restarting terminal windows is enough (because MacOS runs shells in them as login shells by default).  
     - If you're in a GUI session, you need to fully log out and log back in.  
 
 ### Existing .bash_profile content example
 ```terminal
-Gwennies-MacBook-Pro:~ gwennielau$ cat ~/.bash_profile -->
+Gwennies-MacBook-Pro:~ gwennielau$ cat ~/.bash_profile
                                                         # an actual blank line in file
 # Setting PATH for Python 3.8  
 # The original version is saved in .bash_profile.pysave  
