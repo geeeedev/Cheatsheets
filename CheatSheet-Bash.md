@@ -4,6 +4,8 @@
 
 `cat ~/.bash_profile` == print or output file `.bash_profile` content from filepath `~/.bash_profile` in Terminal  
 `~/` == $Home == Users/gwennielau  
+`cd ~` == go straight to the users/gwennielau home dir  
+`code .bash_profile` == open .bash_profile file in VSCode for editing!!!!  
 `echo` == print  
 `\> [filepath]` == print to [filepath], overwrite existing content  
 `\>> [filepath]` == print to [filepath], continue after existing content  
