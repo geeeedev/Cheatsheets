@@ -10,6 +10,7 @@
 `\> [filepath]` == print to [filepath], overwrite existing content  
 `\>> [filepath]` == print to [filepath], continue after existing content  
 `source [filepath]` == reads and executes commands from [filepath] specified as its argument in the current shell environment. It is useful to load functions, variables, and configuration files into shell scripts.  
+`eval [command]` == execute [command]  
 
 ...  
 ...  
