@@ -377,7 +377,11 @@ which node                           //should give current location of node: usr
 Defining the route pattern for each HTTP Request (get/post/put/delete...) and hooking it up
 to the specific controller actions (which is just are callback functions), whether it be creating/saving data to the DB or to an array object or a file IS setting up the API.
 
-
+> Remember JSON Definition:
+>- JSON = object in string format "{" ": "..."}" / (obj str)
+>- JSON.stringify(obj) ==> str  [stringify an object into string / serialize (obj into str)]
+>- JSON.parse(objStr) ==> obj [deserializing into object / parse json / parse objStr into obj ]
+>- ResponseStream.json() ==> pull the JSON returned object out of the Response Stream object
 
 
 - Test this server setup is working with Postman
