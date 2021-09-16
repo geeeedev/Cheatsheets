@@ -12,6 +12,17 @@
 \
 &nbsp;
 
+## header bar:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+&nbsp;
+&nbsp;
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# Header One
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+## Header Two
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+### Header Three
+&nbsp;
 
 ## strike through with tilda:
 ~~crossing over a line of text~~
@@ -92,10 +103,23 @@ but without space after \\
 | :--- | :---: | ---: |
 | afdsjfadksjflkadsjflkjdsalfjdsjfadsfadsfa | fadsfdsafdsafdsafdsafasfadsfdsafdsafas | fasdfdsafdsafadsffadsfadsfasdfasdfasdasdf |
 | use html \<br> tag for<br> multiple lines<br>inside a cell | asdfasdfdsfds | fdsfdsafdsfasd |
-| | | |
+
 \
 \
 &nbsp;
+
+
+| TB-Header1 | TB-Header2 | TB-Header3 |
+| --- | --- | --- |
+| No Alignment | No colons | Default Left Aligned |
+| --- | --- | --- |
+| afdsjfadksjflkadsjflkjdsalfjdsjfadsfadsfa | fadsfdsafdsafdsafdsafasfadsfdsafdsafas | fasdfdsafdsafadsffadsfadsfasdfasdfasdasdf |
+| asdfasdfdsfds | use html \<br> tag for<br> multiple lines<br>inside a cell | fdsfdsafdsfasd |
+| | | |
+\ (no space line table keeps going)
+\
+&nbsp;
+
 
 ## GitHub Markdown Emoji
 > [Categorized](https://github.com/ikatyang/emoji-cheat-sheet)\
