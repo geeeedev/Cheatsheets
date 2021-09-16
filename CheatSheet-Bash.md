@@ -12,7 +12,7 @@
 `source [filepath]` == reads and executes commands from [filepath] specified as its argument in the current shell environment. It is useful to load functions, variables, and configuration files into shell scripts.  
 `eval [command]` == execute [command]  
 `export [var]` == export [variable-or-function] to the environment of all the child processes running in the current shell  
-
+`env` == lists all the environment variables  
 ...  
 ...  
 
