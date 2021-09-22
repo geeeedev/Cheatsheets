@@ -103,3 +103,56 @@ ORDER BY
     first_name,
     last_name; 
 ```
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Example: Table of Employees  
+| id   |  name  | address   | age   | phone      |
+| ---  |  ---   | ---       | ---   | ---        |
+| 1    |  dom   | USA       | 35    | 1111111111 | 
+| 2    |  brian | USA       | 30    | 2222222222 | 
+| 3    |  letty | USA       | 32    | 3333333333 | 
+
+
+```sql
+CREATE TABLE employee (
+    id int,
+    name varchar(50),
+    age int,
+    address varchar(100),
+    phone varchar(10)
+); 
+GO;
+```
+
+###  multiple insert at a time is limited to 1000 rows
+```sql
+INSERT INTO employee VALUES 
+(1,'dom',35,'USA','1111111111'),
+(2,'brain',30,'USA','2222222222'),
+(3,'letty',32,'USA','3333333333');
+
+-- or
+
+INSERT INTO employee (                  --  id is auto applied; specifying the list of fields to match
+    name,
+    age,
+    address,
+    phone
+) 
+OUTPUT inserted.id, inserted.name       --  inserted.???
+VALUES 
+('dom',35,'USA','1111111111'),
+('brain',30,'USA','2222222222'),
+('letty',32,'USA','3333333333');
+
+select * from employee;
+```
+
+
+> Trigger Example:  
+> https://docs.microsoft.com/en-us/sql/relational-databases/triggers/use-the-inserted-and-deleted-tables?view=sql-server-ver15
+
+> SQL Keywords:  
+> https://www.educba.com/sql-keywords/
+
+
+
