@@ -67,4 +67,22 @@ AS
 GO;
 ```
 
-->
+###  Output Parameters
+-  must specify the OUTPUT keyword in both the Create stmt and the Execute stmt
+```sql
+CREATE PROCEDURE getEmployeeName
+@empid INT
+@empName VARCHAR(50) OUTPUT
+AS
+BEGIN
+    select @empName = name
+    from employee
+    where employeeid = @empid;
+END
+GO;
+
+DECLARE @retrievedEmpName VARCHAR(50)
+EXECUTE schemaName.getEmployeeName @empName = @retrievedEmpName OUTPUT
+selet @retrievedEmpName
+```
+
