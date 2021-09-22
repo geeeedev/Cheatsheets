@@ -46,3 +46,25 @@ GO;
 EXECUTE schemaName.procedure_name;
 ```
 
+###  Delete Stored Proc
+-  remove the procedure from the database
+```sql
+DROP PROCEDURE schemaName.procedure_name;
+```
+>  to drop an extended  stored proc, use sp_dropextendedproc
+
+
+###  Parameterized Stored Proc
+-  allow to pass values in and out of stored proc, making it reusable
+-  Input Parameters
+```sql
+CREATE PROCEDURE getEmployeeDetails
+@empid int
+AS
+    select name, address, phone
+    from employee
+    where employeeid = @empid;
+GO;
+```
+
+->
