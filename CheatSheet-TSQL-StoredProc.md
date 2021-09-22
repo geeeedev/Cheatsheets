@@ -86,3 +86,20 @@ EXECUTE schemaName.getEmployeeName @empName = @retrievedEmpName OUTPUT
 selet @retrievedEmpName
 ```
 
+###  Insert Into Select example
+-  https://www.sqlservertutorial.net/sql-server-basics/sql-server-insert-into-select/
+```sql
+INSERT INTO sales.addresses (street, city, state, zip_code) 
+SELECT
+    street,
+    city,
+    state,
+    zip_code
+FROM
+    sales.customers
+WHERE
+    city IN ('Santa Cruz', 'Baldwin')
+ORDER BY
+    first_name,
+    last_name; 
+```
