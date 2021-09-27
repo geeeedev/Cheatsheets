@@ -189,3 +189,14 @@ EXECUTE dbo.getmployeeByAge 30  - 2 records
 EXECUTE dbo.getmployeeByAge 29  - 3 records
 ```
 
+####  Example 4: Write a procedure that returns the average age of employees
+```sql
+CREATE PROCEDURE getAvgAge
+AS
+BEGIN
+    select avg(age)
+    from employee
+END
+GO;
+```
+
