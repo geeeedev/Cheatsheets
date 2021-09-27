@@ -212,3 +212,19 @@ END
 GO;
 ```
 
+####  Example 6: Call the procedure and display the result from output parameter
+```sql
+DECLARE @resultAvgAge int;
+EXECUTE dbo.getAvgAge @avgage = @resultAvgAge OUTPUT;
+select @resultAvgAge;
+
+
+--  To display the value from the output parameter, you must first declare 
+--  a variable (@resultAvgAge), set the output from the procedure to the 
+--  variable you just declared (@avgage = @resultAvgAge) 
+--  and finally, select the result for display.
+```
+
+
+<!-- same notes also in Algo:600.StoredProcBasics-Practice.sql -->
+<!-- keep this .md as most updated -->
