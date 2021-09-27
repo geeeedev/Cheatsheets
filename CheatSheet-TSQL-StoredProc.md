@@ -200,3 +200,15 @@ END
 GO;
 ```
 
+####  Example 5: Modify the above procedure to provide an output parameter
+```sql
+ALTER PROCEDURE getAvgAge
+    @avgAge INT OUTPUT
+AS
+BEGIN
+    select @avgAge = avg(age)
+    from employee
+END
+GO;
+```
+
