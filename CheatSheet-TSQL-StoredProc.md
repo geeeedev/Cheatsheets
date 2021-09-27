@@ -183,3 +183,9 @@ END
 GO;
 ```
 
+####  Example 3: Execute with input parameter
+```sql
+EXECUTE dbo.getmployeeByAge 30  - 2 records
+EXECUTE dbo.getmployeeByAge 29  - 3 records
+```
+
