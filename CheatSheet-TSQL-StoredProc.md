@@ -170,3 +170,16 @@ GO;
 EXECUTE dbo.getmployeeByAge;
 ```
 
+####  Example 2: Modify the above procedure to take age as a parameter 
+```sql
+ALTER PROCEDURE getmployeeByAge
+    @ageLimit int
+AS
+BEGIN
+    select * 
+    from employee
+    where age > @ageLimit
+END
+GO;
+```
+
