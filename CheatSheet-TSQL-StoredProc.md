@@ -156,3 +156,17 @@ select * from employee;
 
 
 
+####  Example 1: A stored procedure that returns a list of peopele older than 31 yrs old
+```sql
+CREATE PROCEDURE getmployeeByAge
+AS
+BEGIN
+    select * 
+    from employee
+    where age > 31
+END
+GO;
+
+EXECUTE dbo.getmployeeByAge;
+```
+
