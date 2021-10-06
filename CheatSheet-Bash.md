@@ -3,6 +3,7 @@
 [15 Useful Bash Shell Built-in Commands (With Examples)](https://www.thegeekstuff.com/2010/08/bash-shell-builtin-commands/)
 
 `cat ~/.bash_profile` == print or output file `.bash_profile` content from filepath `~/.bash_profile` in Terminal  
+`touch ~/.bash_profile` == touch to create file when getting No such file or directory error
 `~/` == $Home == Users/gwennielau  
 `cd ~` == go straight to the users/gwennielau home dir  
 `code .bash_profile` == open .bash_profile file in VSCode for editing!!!!  
@@ -35,7 +36,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"  
 ```
 
-'export PATH="/Users/gwennielau/Library/Python/3.8/bin:$PATH"'
+'export PATH="/Users/gwennielau/Library/Python/3.8/bin:$PATH"'  
 echo 'export PATH="/Users/gwennielau/Library/Python/3.8/bin:$PATH"' >> ~/.profile
 
 ### Rebuild .bash_profile (To Remove Duplicates)
