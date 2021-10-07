@@ -14,6 +14,7 @@
 `eval [command]` == execute [command]  
 `export [var]` == export [variable-or-function] to the environment of all the child processes running in the current shell  
 `env` == lists all the environment variables  
+`bash` == run Terminal in Bash until this Terminal session is closed (default is zsh)
 ...  
 ...  
 
