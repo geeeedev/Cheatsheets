@@ -32,9 +32,9 @@
 | `git reset` | undo whole uncommitted branch back to before git add - undo everything added | |
 | | | |
 | `git push` | push the changes to the remote repository from your local repository <br> `git push origin` &nbsp;&nbsp;&nbsp;//origin = GitHub repo  <br> `git push origin master` &nbsp;&nbsp;&nbsp;//master = local repo |  |
-| `git push --all ` | push all branches to remote repository <br> `git push --all origin`  |  |
-| `git pull` | pull the changes from the connected remote repository to your current local directory |  |
 | `git fetch` | tells your local git to retrieve the latest meta-data info from the original (yet doesn’t do any file transferring. It’s more like just checking to see if there are any changes available). |  |
+| `git pull` | retrieve the latest meta-data AND bring/copy those changes from the remote repository. pull the changes from the connected remote repository to your current local directory |  |
+| `git push --all ` | push all branches to remote repository <br> `git push --all origin`  |  |
 | `git status` | shows all the files that were changed since the last backup and which ones are already added to the staging area |  |
 | `git status <branchName>` | shows all the files that were changed since the last backup and which ones are already added to the staging area |  |
 | | | |
