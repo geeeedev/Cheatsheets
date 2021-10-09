@@ -45,6 +45,7 @@
 | `git merge <branchName>` | merges provided branch name to existing (main) branch - be sure to `checkout` and switch over to the main branch first  | [learn more](https://www.atlassian.com/git/tutorials/using-branches) |
 | `git diff` | view all merge conflicts (when conflict occurs after git merge) <br> type 'q' or 'z' to exit log <br> type 'h' to seek help |  |
 | `git diff --base` | view merge conflicts against the base file |  |
+| `git fetch` | ... ... ... ??? ??? |  |
 | `git branch -d <branchName>` | deletes the provided branch name *with safe operation* to prevent deletion when unmerged changes exist |  |
 | `git branch -D <branchName>` | *FORCE* deletes the provided branch name regardless of unmerged changes existence  |  |
 | | | |
@@ -59,7 +60,6 @@
 | `git log` | shows all the backups created in the repository <br> type 'q' to exit log |  |
 | `git log -p` | see only the diff introduced in each commit <br> type 'q' to exit log |  |
 | `git clone <url>` | clones a remote repository from the provided URL to your current local folder directory <br> `git clone https://github.com/geeeedev/chittychat.git` |  |
-| `git fetch` | ... ... ... ??? ??? |  |
 | `git tag`   | ... ... ... ??? ??? |  |
 | | | |
 | `git remote remove <remoteRepoName>` | delete remote repo you added |  |
