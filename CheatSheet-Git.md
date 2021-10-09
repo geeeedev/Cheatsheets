@@ -34,6 +34,7 @@
 | `git push` | push the changes to the remote repository from your local repository <br> `git push origin` &nbsp;&nbsp;&nbsp;//origin = GitHub repo  <br> `git push origin master` &nbsp;&nbsp;&nbsp;//master = local repo |  |
 | `git push --all ` | push all branches to remote repository <br> `git push --all origin`  |  |
 | `git pull` | pull the changes from the connected remote repository to your current local directory |  |
+| `git fetch` | tells your local git to retrieve the latest meta-data info from the original (yet doesn’t do any file transferring. It’s more like just checking to see if there are any changes available). |  |
 | `git status` | shows all the files that were changed since the last backup and which ones are already added to the staging area |  |
 | `git status <branchName>` | shows all the files that were changed since the last backup and which ones are already added to the staging area |  |
 | | | |
@@ -45,7 +46,6 @@
 | `git merge <branchName>` | merges provided branch name to existing (main) branch - be sure to `checkout` and switch over to the main branch first  | [learn more](https://www.atlassian.com/git/tutorials/using-branches) |
 | `git diff` | view all merge conflicts (when conflict occurs after git merge) <br> type 'q' or 'z' to exit log <br> type 'h' to seek help |  |
 | `git diff --base` | view merge conflicts against the base file |  |
-| `git fetch` | ... ... ... ??? ??? |  |
 | `git branch -d <branchName>` | deletes the provided branch name *with safe operation* to prevent deletion when unmerged changes exist |  |
 | `git branch -D <branchName>` | *FORCE* deletes the provided branch name regardless of unmerged changes existence  |  |
 | | | |
