@@ -225,7 +225,7 @@ Folder structure organized by `project` and `app`:
 
 ## Hook up project (settings.py)
 
-- open outer level projName folder in VSCode
+- open OUTER/root level projName folder in VSCode
 - activate vEnv
 - arrive at outer level projName folder
 - projName > settings.py > INSTALLED_APPS section
@@ -257,7 +257,7 @@ Folder structure organized by `project` and `app`:
     from django.urls import path
     from . import views
     urlpatterns = [
-            path('', views.indexPg),
+        path('', views.indexPg),
         path(‘create’, views.create),
         path(‘<id>/<name>’, views.update),
     ]
