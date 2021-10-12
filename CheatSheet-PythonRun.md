@@ -150,8 +150,8 @@ To run my PY Django project, first ensure below steps in order:
 - activate Django Shell to interact with models in Django ORM
 - to view data in sqlite3
     ```python
-    python manage.py shell
-    from appName.models import *
+    python manage.py shell          #activate Django Shell
+    from appName.models import *    #load models from app for Django ORM
     ```
 
 - example to retrieve data in Django Shell
