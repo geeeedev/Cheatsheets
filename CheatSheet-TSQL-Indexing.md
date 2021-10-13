@@ -51,3 +51,14 @@ just need formating and spacing for .md
 -  Both clustered and nonclustered indexes can be built from one or more table columns
 
 
+## NonClustered Indexes
+-  A nonclustered index is made of index pages that contain only row locators (pointers) for records in data pages. 
+-  It doesn’t contain data pages, like clustered indexes.
+-  Both clustered and nonclustered indexes can be built from one or more table columns
+
+|              |   Heap Table    |   Clustered Index     |   NonClustered Index          |
+|    ---       |   ---           |   ---                 |   ---                         |
+| consists of: |   data pages    |   data pages          |                               |
+|              |                 |  index pages          |   index pages (row pointers)  |
+
+
