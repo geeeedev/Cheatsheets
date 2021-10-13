@@ -34,3 +34,20 @@ just need formating and spacing for .md
 -  A heap can have one or several NONclustered indexes, or no indexes at all.
 
 
+## Clustered Indexes
+-  A clustered index organizes table data, so data is queried quicker and more efficiently. 
+-  A clustered index consists of both index pages and data pages, 
+-  while a heap table has no index pages; it consists only of data pages. 
+-  In other words, a clustered index is not just an index, i.e. a pointer to the data row that contains the key value, 
+-  but it also contains table data. The data in the clustered table is sorted using the values of the columns 
+-  the clustered index is made of. 
+-  Again, the data in the clustered table IS SORTED USING THE VALUES OF THE COLUMNS THE CLUSTERED INDEX IS MADE OF.
+-  Finding a record from a table with a proper clustered index is quick and easy like 
+-  finding a name in an alphabetically ordered list. 
+-  A general recommendation for all SQL tables is to have a proper clustered index
+-  With a proper clustered index, less reads are required to retrieve the records requested by a query or stored procedure. 
+-  Therefore, fewer disk I/O are preformed and the operation is completed faster.
+-  While there can be only one clustered index on a table, a table can have up to 999 nonclustered indexes
+-  Both clustered and nonclustered indexes can be built from one or more table columns
+
+
