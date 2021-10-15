@@ -62,3 +62,14 @@ just need formating and spacing for .md
 |              |                 |  index pages          |   index pages (row pointers)  |
 
 
+-  T-SQL Clustered Indexing Example
+CREATE TABLE [Person].[Address](
+    [AddressID] [int] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
+    [AddressLine1] [nvarchar](60) NOT NULL,
+    [AddressLine2] [nvarchar](60) NULL,
+    [City] [nvarchar](30) NOT NULL,
+CONSTRAINT [PK_Address_AddressID] PRIMARY KEY CLUSTERED 
+(
+    [AddressID] ASC
+) ON [PRIMARY]
+
