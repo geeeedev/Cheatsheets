@@ -73,3 +73,12 @@ CONSTRAINT [PK_Address_AddressID] PRIMARY KEY CLUSTERED
     [AddressID] ASC
 ) ON [PRIMARY]
 
+-  When you execute the select statement on a clustered table where an ascending clustered index is created, 
+-  the results will be ordered ascending by the clustered key column. In this example, it’s the AddressID column will be listed in order.
+-  The same table, but with a descending clustered index will return the results sorted by the AddressID column descending.
+CONSTRAINT [PK_Address_AddressID] PRIMARY KEY CLUSTERED 
+(
+	    [AddressID] DESC
+) ON [PRIMARY]
+
+
