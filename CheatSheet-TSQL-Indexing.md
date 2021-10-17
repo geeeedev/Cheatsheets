@@ -94,3 +94,6 @@ CREATE NONCLUSTERED INDEX [IX_Address_StateProvinceID4] ON [Person].[Address4]
 	[AddressID] ASC
 ) ON [PRIMARY]
 
+-  When you execute the select statement on a heap table with the same columns and data, the results returned will be unordered.
+-  So in this case, the AddressID column will be listed/printed out of order.
+
