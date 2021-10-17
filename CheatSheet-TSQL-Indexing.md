@@ -97,3 +97,18 @@ CREATE NONCLUSTERED INDEX [IX_Address_StateProvinceID4] ON [Person].[Address4]
 -  When you execute the select statement on a heap table with the same columns and data, the results returned will be unordered.
 -  So in this case, the AddressID column will be listed/printed out of order.
 
+|      | AddressID   |  AddressLine1  | City   |                    
+|  --- | ---  |  ---  | --- | 
+|  1   | 58   |        1234 Some Lane   |   Seattle     |
+|  2   | 116  |        1234 Some Drive  |   Los Angeles |
+|  3   | 175  |        ...              |   ...         |
+|  4   | 24   |        ...              |   ...         |
+|  5   | 182  |        ...              |   ...         |
+
+
+-  It’s not recommended to use a heap table if you’re going to store a large number of records in the table. 
+-  SQL query execution on a table with millions of records without a clustered index requires a lot of time. 
+-  If you need to get a sorted results list, it’s easier to define an ascending or descending clustered index, 
+-  as shown in the examples above, than to sort the unsorted results set retrieved from a heap table. 
+-  The same goes for grouping, filtering by a value range.
+
