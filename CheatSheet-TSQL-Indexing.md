@@ -82,3 +82,15 @@ CONSTRAINT [PK_Address_AddressID] PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 
 
+-  T-SQL NONClustered Indexing Example
+CREATE TABLE [Person].[Address4](
+    [AddressID] [int] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
+    [AddressLine1] [nvarchar](60) NOT NULL,
+    [AddressLine2] [nvarchar](60) NULL,
+    [City] [nvarchar](30) NOT NULL)
+
+CREATE NONCLUSTERED INDEX [IX_Address_StateProvinceID4] ON [Person].[Address4]
+(
+	[AddressID] ASC
+) ON [PRIMARY]
+
