@@ -121,3 +121,16 @@ CREATE NONCLUSTERED INDEX [IX_Address_StateProvinceID4] ON [Person].[Address4]
 -  A wrong index can be an index created on a column that doesn’t provide easier data manipulation or 
 -  an index created on multiple columns which instead of speeding up queries, slows them down.
 
+
+-  General Recommendation: 
+-  create a clustered index on tables where data is frequently queried
+-  Both clustered and nonclustered indexes can be built from one or more table columns
+-  When you create a new table with a primary key in a SQL Server database, 
+-  a unique clustered index is automatically created on the primary key column, which 
+-  might or might not be the optimal clustered index
+-  It’s not recommended to use the primary key as a clustered index without checking 
+-  whether that is the optimal solution in you scenario first.
+-  Note: the difference between a primary key and clustered index – 
+-  a primary key can’t have duplicate or null values, while a clustered index can.
+-  Note: A clustered index should not be built on a column already used in a unique index.
+
