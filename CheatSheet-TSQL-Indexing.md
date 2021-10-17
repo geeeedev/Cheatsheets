@@ -112,3 +112,12 @@ CREATE NONCLUSTERED INDEX [IX_Address_StateProvinceID4] ON [Person].[Address4]
 -  as shown in the examples above, than to sort the unsorted results set retrieved from a heap table. 
 -  The same goes for grouping, filtering by a value range.
 
+
+-  Poor Indexing:
+-  SQL querying performance suffers due to excessive, improper, or missing indexes
+-  If indexes are not properly created, SQL Server has to go through more records in order to retrieve 
+-  the data requested by a query. Therefore, it uses more hardware resources (processor, memory, disk, 
+-  and network) and obtaining the data lasts longer.
+-  A wrong index can be an index created on a column that doesn’t provide easier data manipulation or 
+-  an index created on multiple columns which instead of speeding up queries, slows them down.
+
