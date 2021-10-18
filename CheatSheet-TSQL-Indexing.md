@@ -142,3 +142,10 @@ CREATE NONCLUSTERED INDEX [IX_Address_StateProvinceID4] ON [Person].[Address4]
 -  using a column already ordered ascending, such as an identity column, is a good solution.
 -  Using a unique column for a clustered index enables more efficient search for a specific value
 
+-  Explain
+-  If a column where new values are not higher than previous is used for a clustered index, 
+-  adding each new row would require re-ordering, i.e. moving the whole row and placing it 
+-  to its proper location in accordance with clustered index ordering, thus splitting 
+-  data pages and affecting SQL Server performance. 
+-  If such clustered index is created on a table with frequent inserts and updates, it can cause performance degradation.
+
