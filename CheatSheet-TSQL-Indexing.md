@@ -134,3 +134,11 @@ CREATE NONCLUSTERED INDEX [IX_Address_StateProvinceID4] ON [Person].[Address4]
 -  a primary key can’t have duplicate or null values, while a clustered index can.
 -  Note: A clustered index should not be built on a column already used in a unique index.
 
+-  ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~* - 
+-  SELECTING THE APPROPRIATE COLUMN to create indexes on
+-  The column used for a clustered index should be unique (no duplicates - think about index sorting/re-ordering),
+-  identity, or any other column where the value is increased for EACH NEW ENTRY. 
+-  As clustered indexes sort and re-order the records based on the column value, 
+-  using a column already ordered ascending, such as an identity column, is a good solution.
+-  Using a unique column for a clustered index enables more efficient search for a specific value
+
