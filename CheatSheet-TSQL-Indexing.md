@@ -149,3 +149,12 @@ CREATE NONCLUSTERED INDEX [IX_Address_StateProvinceID4] ON [Person].[Address4]
 -  data pages and affecting SQL Server performance. 
 -  If such clustered index is created on a table with frequent inserts and updates, it can cause performance degradation.
 
+-  And if a column frequently changes its value it should not be used for a clustered index. 
+-  Each change of the column used for the clustered index requires the records to be reordered. 
+-  This re-ordering can easily be avoided by using a column that is not updated frequently, or not updated at all.
+
+-  Using a column that stores large data, such as BLOB columns (text, nvarchar(max), image, etc.), 
+-  and GUID columns is not recommended. Using large values to sort the data is not efficient, 
+-  and in case of GUID and image columns doesn’t make sense.
+
+
