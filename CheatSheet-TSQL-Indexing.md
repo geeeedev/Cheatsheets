@@ -158,3 +158,15 @@ CREATE NONCLUSTERED INDEX [IX_Address_StateProvinceID4] ON [Person].[Address4]
 -  and in case of GUID and image columns doesn’t make sense.
 
 
+<!-- 
+|  	                | Clustered index   | Clustered index       | Nonclustered          | No indexes |    
+|  	                | on PK (AddyID)    | on any column (city)  | on PK (AddyID)        |            |     -->
+|                   | Clustered index <br> on PK (AddyID)	| Clustered index <br> on any column (city)	| Nonclustered index <br> on PK (AddyID)  | No indexes |   
+|   ---             | ---               | ---                   | ---                   | ---        |
+|  SELECT *	        | 0.28	            | 0.43	                | 0.28	                | 0.28       |
+|  SELECT <list>	| 0.18	            | 0.43	                | 0.28	                | 0.28       |
+|  INSERT	        | 0.04	            | 0.02	                | 0.02	                | 0.01       |
+|  UPDATE	        | 0.02	            | 0.01	                | 0.01	                | 0.3        |
+|  DELETE	        | 0.05	            | 0.02	                | 0.02	                | 0.3        |
+
+
