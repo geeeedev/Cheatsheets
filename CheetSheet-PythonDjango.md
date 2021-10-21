@@ -8,3 +8,22 @@ cmd         | Meaning/Usage
  
  myFunc('Hello', 'These', 'Are', 'Non', 'Keyword', 'Arguments')
 ```
+
+cmd         | Meaning/Usage
+------------|-------------------------
+**kwargs    | represents Keyword Arguments as variable(s) <br> a special symbol <br> passing a keyworded, name-to-variable, varied-length argument list as an object/dictionary collection
+```py
+def myFunc(*kwargs):
+	for key, value in kwargs.items():
+		print ("%s => %s" %(key, value))
+
+myFunc(first='These', sec='Are', third='keyword',fourth='arguments')
+'''
+output: 
+first => These
+sec => Are
+thrid => keyword
+fourth => arguments
+'''
+```
+
