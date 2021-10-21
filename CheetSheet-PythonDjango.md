@@ -26,4 +26,20 @@ thrid => keyword
 fourth => arguments
 '''
 ```
+```py
+def showBoth(*args, **kwargs):
+	print("args:", args)
+	print("kwargs:", kwargs)
 
+showBoth('see','the','difference','between',a='non-keyword',b='versus',c='keyworded',d='arguments')
+'''
+args: ('see','the','difference','between')
+kwargs: {
+	'a': 'non-keyword',
+	'b': 'versus',
+	'c': 'keyworded',
+	'd': 'arguments'
+	}
+'''
+```
+>ource from [args/kwargs](https://www.geeksforgeeks.org/args-kwargs-python/)
